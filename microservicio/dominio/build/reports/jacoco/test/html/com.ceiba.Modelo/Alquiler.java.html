@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Alquiler.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dominio</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.modelo</a> &gt; <span class="el_source">Alquiler.java</span></div><h1>Alquiler.java</h1><pre class="source lang-java linenums">package com.ceiba.modelo;
+
+import lombok.Getter;
+
+@Getter
+public class Alquiler {
+
+<span class="fc" id="L8">    private final int tiempoAlquilado;</span>
+<span class="fc" id="L9">    private final String fechaAlquiler;</span>
+<span class="fc" id="L10">    private final  String  fechaDevolucion;</span>
+
+    public static Alquiler of(int tiempoAlquilado, String fechaAlquiler, String fechaDevolucion )
+    {
+<span class="fc" id="L14">        validarDiferenteDeCero(tiempoAlquilado, &quot;El numero de dias de Alquiler no puede ser cero , ni negativo&quot;);</span>
+<span class="fc" id="L15">        validarObligatorio(fechaAlquiler,&quot;La fecha del dia del alquiler no puede estar vacia&quot;);</span>
+<span class="fc" id="L16">        validarObligatorio(fechaDevolucion,&quot;La fecha del dia de devolucion no puede estar vacia&quot;);</span>
+
+<span class="fc" id="L18">        return new Alquiler(tiempoAlquilado,fechaAlquiler, fechaDevolucion);</span>
+    }
+
+<span class="fc" id="L21">    public Alquiler(int tiempoAlquilado, String fechaAlquiler, String fechaDevolucion) {</span>
+<span class="fc" id="L22">        this.tiempoAlquilado = tiempoAlquilado;</span>
+<span class="fc" id="L23">        this.fechaAlquiler = fechaAlquiler;</span>
+<span class="fc" id="L24">        this.fechaDevolucion = fechaDevolucion;</span>
+<span class="fc" id="L25">    }</span>
+
+    public static void validarObligatorio(String valor, String mensaje)
+    {
+<span class="pc bpc" id="L29" title="2 of 4 branches missed.">        if(valor== null || valor.isEmpty())</span>
+        {
+<span class="nc" id="L31">            throw new IllegalArgumentException(mensaje);</span>
+        }
+<span class="fc" id="L33">    }</span>
+    public static void validarDiferenteDeCero(int valor, String mensaje)
+    {
+<span class="pc bpc" id="L36" title="2 of 4 branches missed.">        if (valor==0 || valor &lt; 0)</span>
+        {
+<span class="nc" id="L38">            throw new IllegalArgumentException(mensaje);</span>
+        }
+<span class="fc" id="L40">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ProductoFacturar.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dominio</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.modelo.entidad</a> &gt; <span class="el_source">ProductoFacturar.java</span></div><h1>ProductoFacturar.java</h1><pre class="source lang-java linenums">package com.ceiba.modelo.entidad;
+
+import com.ceiba.dominio.ValidadorArgumento;
+import com.ceiba.producto.entidad.Producto;
+
+import java.math.BigDecimal;
+
+public class ProductoFacturar {
+<span class="nc" id="L9">    public static final Double VALOR_IVA = 0.19;</span>
+
+    private Long id;
+    private final Integer cantidad;
+    private final Producto producto;
+
+<span class="nc" id="L15">    private ProductoFacturar(Integer cantidad, Producto producto) {</span>
+<span class="nc" id="L16">        this.cantidad = cantidad;</span>
+<span class="nc" id="L17">        this.producto = producto;</span>
+<span class="nc" id="L18">    }</span>
+
+<span class="nc" id="L20">    private ProductoFacturar(Long id, Integer cantidad, Producto producto) {</span>
+<span class="nc" id="L21">        this.cantidad = cantidad;</span>
+<span class="nc" id="L22">        this.producto = producto;</span>
+<span class="nc" id="L23">        this.id = id;</span>
+<span class="nc" id="L24">    }</span>
+
+    public static ProductoFacturar crear(Integer cantidad, Producto producto) {
+<span class="nc" id="L27">        ValidadorArgumento.validarObligatorio(cantidad, &quot;Cantidad es requerida&quot;);</span>
+<span class="nc" id="L28">        ValidadorArgumento.validarObligatorio(producto, &quot;Producto es requerido&quot;);</span>
+<span class="nc" id="L29">        return new ProductoFacturar(cantidad, producto);</span>
+    }
+
+    public static ProductoFacturar reconstruir(Long id, Integer cantidad, Producto producto) {
+<span class="nc" id="L33">        ValidadorArgumento.validarObligatorio(cantidad, &quot;Cantidad es requerida&quot;);</span>
+<span class="nc" id="L34">        ValidadorArgumento.validarObligatorio(producto, &quot;Producto es requerido&quot;);</span>
+<span class="nc" id="L35">        return new ProductoFacturar(id, cantidad, producto);</span>
+    }
+
+    public BigDecimal calcularIva() {
+<span class="nc bnc" id="L39" title="All 2 branches missed.">        if (producto.aplicaIva()) {</span>
+<span class="nc" id="L40">            return calcularSubTotal().multiply(BigDecimal.valueOf(VALOR_IVA));</span>
+        }
+<span class="nc" id="L42">        return BigDecimal.ZERO;</span>
+    }
+
+    public BigDecimal calcularTotalConIva() {
+<span class="nc" id="L46">        return calcularSubTotal()</span>
+<span class="nc" id="L47">                .add(calcularIva());</span>
+    }
+
+    private BigDecimal calcularSubTotal() {
+<span class="nc" id="L51">        return producto.getValor()</span>
+<span class="nc" id="L52">                .multiply(BigDecimal.valueOf(cantidad));</span>
+    }
+
+    public Integer getCantidad() {
+<span class="nc" id="L56">        return cantidad;</span>
+    }
+
+    public Producto getProducto() {
+<span class="nc" id="L60">        return producto;</span>
+    }
+
+    public Long getId() {
+<span class="nc" id="L64">        return id;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

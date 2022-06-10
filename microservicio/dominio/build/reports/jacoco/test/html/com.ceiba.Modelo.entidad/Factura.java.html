@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Factura.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dominio</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.modelo.entidad</a> &gt; <span class="el_source">Factura.java</span></div><h1>Factura.java</h1><pre class="source lang-java linenums">package com.ceiba.modelo.entidad;
+
+import com.ceiba.cliente.entidad.Cliente;
+import com.ceiba.dominio.ValidadorArgumento;
+import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Factura {
+
+    public static final double DESCUENTO_CLIENTE_PREFERENCIAL = 0.2;
+    public static final double DESCUENTO_CLIENTE_ESPECIAL = 0.1;
+
+    private Long id;
+    private Cliente cliente;
+    private List&lt;ProductoFacturar&gt; productosFacturar;
+    private BigDecimal valorTotal;
+    private EstadoFactura estado;
+
+<span class="nc" id="L23">    private Factura(Cliente cliente, List&lt;ProductoFacturar&gt; productosFacturar) {</span>
+<span class="nc" id="L24">        this.cliente = cliente;</span>
+<span class="nc" id="L25">        this.productosFacturar = new ArrayList&lt;&gt;(productosFacturar);</span>
+<span class="nc" id="L26">        this.valorTotal = calcularvalorTotal(productosFacturar);</span>
+<span class="nc" id="L27">        aplicarDescuento();</span>
+<span class="nc" id="L28">        this.estado = EstadoFactura.ACTIVA;</span>
+<span class="nc" id="L29">    }</span>
+
+<span class="nc" id="L31">    private Factura(Long id, Cliente cliente, List&lt;ProductoFacturar&gt; productosFacturar, BigDecimal valorTotal, EstadoFactura estadoFactura) {</span>
+<span class="nc" id="L32">        this.cliente = cliente;</span>
+<span class="nc" id="L33">        this.productosFacturar = new ArrayList&lt;&gt;(productosFacturar);</span>
+<span class="nc" id="L34">        this.id = id;</span>
+<span class="nc" id="L35">        this.valorTotal = valorTotal;</span>
+<span class="nc" id="L36">        this.estado = estadoFactura;</span>
+<span class="nc" id="L37">    }</span>
+
+    private BigDecimal calcularvalorTotal(List&lt;ProductoFacturar&gt; productosFacturar) {
+<span class="nc" id="L40">        return productosFacturar.stream()</span>
+<span class="nc" id="L41">                .map(ProductoFacturar::calcularTotalConIva)</span>
+<span class="nc" id="L42">                .reduce(BigDecimal.ZERO, BigDecimal::add);</span>
+    }
+
+    private void aplicarDescuento() {
+<span class="nc bnc" id="L46" title="All 2 branches missed.">        if (this.cliente.esTipoPreferencial()) {</span>
+<span class="nc" id="L47">            this.valorTotal = valorTotal.subtract(valorTotal.multiply(BigDecimal.valueOf(DESCUENTO_CLIENTE_PREFERENCIAL)));</span>
+<span class="nc bnc" id="L48" title="All 2 branches missed.">        } else if (this.cliente.esTipoEspecial()) {</span>
+<span class="nc" id="L49">            this.valorTotal = valorTotal.subtract(valorTotal.multiply(BigDecimal.valueOf(DESCUENTO_CLIENTE_ESPECIAL)));</span>
+        }
+<span class="nc" id="L51">    }</span>
+
+    public void anular() {
+<span class="nc bnc" id="L54" title="All 2 branches missed.">        if(this.cliente.esTipoComun()){</span>
+<span class="nc" id="L55">            throw new ExcepcionValorInvalido(&quot;No se puede anular la factura de un cliente comun&quot;);</span>
+        }
+<span class="nc" id="L57">        this.estado = EstadoFactura.ANULADA;</span>
+<span class="nc" id="L58">    }</span>
+
+    public Cliente getCliente() {
+<span class="nc" id="L61">        return this.cliente;</span>
+    }
+
+    public List&lt;ProductoFacturar&gt; getProductos() {
+<span class="nc" id="L65">        return Collections.unmodifiableList(productosFacturar);</span>
+    }
+
+    public BigDecimal getValorTotal() {
+<span class="nc" id="L69">        return valorTotal;</span>
+    }
+
+    public Long getId() {
+<span class="nc" id="L73">        return id;</span>
+    }
+
+    public static Factura crear(SolicitudFacturar solicitudFacturar) {
+<span class="nc" id="L77">        ValidadorArgumento.validarObligatorio(solicitudFacturar.getCliente(), &quot;El cliente es requerido para facturar&quot;);</span>
+<span class="nc" id="L78">        ValidadorArgumento.validarNoVacio(solicitudFacturar.getProductosFacturar(), &quot;No se puede crear una factura sin productos&quot;);</span>
+<span class="nc" id="L79">        return new Factura(solicitudFacturar.getCliente(), solicitudFacturar.getProductosFacturar());</span>
+    }
+
+    public static Factura reconstruir(Long id, Cliente cliente, List&lt;ProductoFacturar&gt; productosFacturar, BigDecimal valorTotal, EstadoFactura estadoFactura) {
+<span class="nc" id="L83">        ValidadorArgumento.validarObligatorio(cliente, &quot;El cliente es requerido para facturar&quot;);</span>
+<span class="nc" id="L84">        ValidadorArgumento.validarNoVacio(productosFacturar, &quot;No se puede crear una factura sin productos&quot;);</span>
+<span class="nc" id="L85">        ValidadorArgumento.validarObligatorio(id, &quot;El id es requerido&quot;);</span>
+<span class="nc bnc" id="L86" title="All 2 branches missed.">        if (valorTotal.compareTo(BigDecimal.ZERO) &lt;= 0) {</span>
+<span class="nc" id="L87">            throw new ExcepcionValorInvalido(&quot;El total no puede ser menor a cero&quot;);</span>
+        }
+<span class="nc" id="L89">        return new Factura(id, cliente, productosFacturar, valorTotal, estadoFactura);</span>
+    }
+
+
+    public Boolean esAnulada() {
+<span class="nc" id="L94">        return this.estado.equals(EstadoFactura.ANULADA);</span>
+    }
+
+    public boolean esActiva() {
+<span class="nc" id="L98">        return this.estado.equals(EstadoFactura.ACTIVA);</span>
+    }
+
+    public EstadoFactura getEstado() {
+<span class="nc" id="L102">        return estado;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
