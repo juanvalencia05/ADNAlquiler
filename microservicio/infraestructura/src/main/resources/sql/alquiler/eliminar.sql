@@ -1,2 +1,2 @@
 DELETE from alquiler
-where id =:id
+where id = :id;

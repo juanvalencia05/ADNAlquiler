@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MapeoAlquiler.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.alquiler.adaptador.dao</a> &gt; <span class="el_source">MapeoAlquiler.java</span></div><h1>MapeoAlquiler.java</h1><pre class="source lang-java linenums">package com.ceiba.alquiler.adaptador.dao;
+import com.ceiba.dto.AlquilerResumenDto;
+import com.ceiba.infraestructura.jdbc.MapperResult;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Service;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+@Service
+<span class="fc" id="L9">public class MapeoAlquiler implements RowMapper&lt;AlquilerResumenDto&gt;, MapperResult {</span>
+    @Override
+    public AlquilerResumenDto mapRow(ResultSet rs, int rowNum) throws SQLException {
+
+<span class="fc" id="L13">        var tiempoAlquiler = rs.getInt(&quot;tiempo_alquiler&quot;);</span>
+<span class="fc" id="L14">        var fechaAlquiler = rs.getString(&quot;fecha_alquiler&quot;);</span>
+<span class="fc" id="L15">        var fechaDevolucion = rs.getString(&quot;fecha_devolucion&quot;);</span>
+<span class="fc" id="L16">        var fechaDevolucionReal = rs.getString(&quot;fecha_devolucion_real&quot;);</span>
+<span class="fc" id="L17">        var pago = rs.getInt(&quot;pago&quot;);</span>
+
+<span class="fc" id="L19">        return new AlquilerResumenDto(tiempoAlquiler,fechaAlquiler,fechaDevolucion,fechaDevolucionReal,pago);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/comun" />
+        <option name="gradleJvm" value="corretto-17" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/comun" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/microservicio" />
+        <option name="gradleJvm" value="corretto-17" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/comun" />
+            <option value="$PROJECT_DIR$/comun/comun-aplicacion" />
+            <option value="$PROJECT_DIR$/comun/comun-dominio" />
+            <option value="$PROJECT_DIR$/comun/comun-infraestructura" />
+            <option value="$PROJECT_DIR$/comun/comun-test" />
+            <option value="$PROJECT_DIR$/microservicio" />
+            <option value="$PROJECT_DIR$/microservicio/aplicacion" />
+            <option value="$PROJECT_DIR$/microservicio/dominio" />
+            <option value="$PROJECT_DIR$/microservicio/infraestructura" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

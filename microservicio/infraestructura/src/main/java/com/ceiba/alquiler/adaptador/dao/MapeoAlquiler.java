@@ -3,8 +3,6 @@ import com.ceiba.dto.AlquilerResumenDto;
 import com.ceiba.infraestructura.jdbc.MapperResult;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
-
-import java.beans.JavaBean;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 @Service

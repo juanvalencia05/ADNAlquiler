@@ -3,10 +3,14 @@ package com.ceiba.alquiler.adaptador.repositorio;
 import com.ceiba.alquiler.adaptador.dao.MapeoAlquiler;
 import com.ceiba.dto.AlquilerResumenDto;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
+import com.ceiba.infraestructura.jdbc.EjecucionBaseDeDatos;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ceiba.puerto.RepositorioAlquiler;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 public class RepositorioAlquilerPostgre implements RepositorioAlquiler {
@@ -28,11 +32,13 @@ public class RepositorioAlquilerPostgre implements RepositorioAlquiler {
     @SqlStatement(namespace = "alquiler", value = "eliminar")
     private static String sqlEliminar;
 
+    @SqlStatement(namespace = "alquiler", value = "consultar")
+    private static String sqlConsultar;
+
 
     @Override
     public int crear(AlquilerResumenDto alquilerResumenDto) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
-
         paramSource.addValue("tiempo_alquiler", alquilerResumenDto.getTiempoAlquilado());
         paramSource.addValue("fecha_alquiler", alquilerResumenDto.getFechaAlquiler());
         paramSource.addValue("fecha_devolucion", alquilerResumenDto.getFechaDevolucion());
@@ -43,7 +49,12 @@ public class RepositorioAlquilerPostgre implements RepositorioAlquiler {
 
     @Override
     public AlquilerResumenDto consultarPorId(int id) {
-        return null;
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
+        return EjecucionBaseDeDatos.obtenerUnObjetoONull(()->
+                this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
+                        .queryForObject(sqlObtenerAlquilePorId,paramSource, new MapeoAlquiler()));
+
     }
 
     @Override
@@ -53,6 +64,26 @@ public class RepositorioAlquilerPostgre implements RepositorioAlquiler {
 
     @Override
     public int eliminar(int id) {
-        return 0;
+
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
+        EjecucionBaseDeDatos.obtenerUnObjetoONull(()->
+                this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar,paramSource));
+
+        return id;
+    }
+
+    @Override
+    public List<AlquilerResumenDto> listar() {
+        List<AlquilerResumenDto> alquiler = new ArrayList<>();
+
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.getValues();
+
+        alquiler = this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
+                .query(sqlConsultar, paramSource, mapeoAlquiler );
+
+        return alquiler.stream().map(alqui -> new AlquilerResumenDto(alqui.getTiempoAlquilado(),alqui.getFechaAlquiler(),
+                alqui.getFechaDevolucion(),alqui.getFechaDevolucionReal(),alqui.getTotalAPagar())).toList();
     }
 }

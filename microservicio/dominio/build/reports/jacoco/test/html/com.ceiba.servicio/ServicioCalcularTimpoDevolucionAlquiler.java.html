@@ -7,25 +7,26 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 @Service
-<span class="fc" id="L10">public class ServicioCalcularTimpoDevolucionAlquiler {</span>
+<span class="nc" id="L10">public class ServicioCalcularTimpoDevolucionAlquiler {</span>
 
     public String CalcularFechaDevolucon(Alquiler alquiler)
     {
-<span class="fc" id="L14">        String fechaDevolucion = &quot;00/00/0000&quot;;</span>
 
-<span class="fc" id="L16">        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(&quot;dd/MM/yyyy&quot;);</span>
 
-<span class="fc" id="L18">        LocalDate localDate = LocalDate.parse(alquiler.getFechaAlquiler(),formatter);</span>
+<span class="nc" id="L16">        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(&quot;dd/MM/yyyy&quot;);</span>
 
-<span class="fc" id="L20">        localDate = localDate.plusDays(alquiler.getTiempoAlquilado());</span>
+<span class="nc" id="L18">        LocalDate localDate = LocalDate.parse(alquiler.getFechaAlquiler(),formatter);</span>
 
-<span class="fc" id="L22">       return fechaDevolucion = obtenerTextoFecha(localDate);</span>
+<span class="nc" id="L20">        localDate = localDate.plusDays(alquiler.getTiempoAlquilado());</span>
+
+<span class="nc" id="L22">       return obtenerTextoFecha(localDate);</span>
     }
     private String obtenerTextoFecha(LocalDate date)
     {
-<span class="fc" id="L26">        String FORMATO_DD_MM_YYYY = &quot;dd/MM/yyyy&quot;;</span>
-<span class="fc" id="L27">        DateTimeFormatter patron = DateTimeFormatter.ofPattern(FORMATO_DD_MM_YYYY);</span>
-<span class="fc" id="L28">        return patron.format(date);</span>
+<span class="nc" id="L26">        String FORMATO_DD_MM_YYYY = &quot;dd/MM/yyyy&quot;;</span>
+
+<span class="nc" id="L28">        DateTimeFormatter patron = DateTimeFormatter.ofPattern(FORMATO_DD_MM_YYYY);</span>
+<span class="nc" id="L29">        return patron.format(date);</span>
     }
 
 }
