@@ -1,6 +1,5 @@
 package com.ceiba.alquiler.controlador;
 
-
 import com.ceiba.dto.AlquilerResumenDto;
 import com.ceiba.dto.DtoAlquiler;
 import com.ceiba.dto.DtoRespuesta;

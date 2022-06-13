@@ -2,7 +2,6 @@ package com.ceiba.servicio;
 
 import com.ceiba.AlquilerTestDataBuilder;
 import com.ceiba.dto.AlquilerResumenDto;
-import com.ceiba.modelo.Alquiler;
 import com.ceiba.puerto.RepositorioAlquiler;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
