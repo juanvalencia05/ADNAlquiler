@@ -34,13 +34,17 @@ pipeline {
         checkout scm
       }
     }
-  
+    stage('clean') {
+      steps{
+            sh 'chmod +x ./microservicio/gradlew'
+            sh './microservicio/gradlew --b ./microservicio/build.gradle clean'
+      }
+    }
     stage('Compile & Unit Tests') {
        steps{
-		echo "------------>Unit Tests<------------"
-		sh 'gradle --b ./build.gradle test'
-		junit '**/build/test-results/test/*.xml' //aggregate test results - JUnit
-		sh 'gradle --b ./build.gradle jacocoTestReport'
+             echo "------------>compile & Unit Tests<------------"
+             sh 'chmod +x ./microservicio/gradlew'
+             sh './microservicio/gradlew --b ./microservicio/build.gradle test'
        }
     }
 
@@ -56,8 +60,8 @@ pipeline {
 
     stage('Build') {
       steps {
-		echo "------------>Build<------------"
-		sh 'gradle build -x test'
+        echo "------------>Build<------------"
+        sh './microservicio/gradlew --b ./microservicio/build.gradle build -x test'
       }
     }
   }
