@@ -75,12 +75,11 @@ public class RepositorioAlquilerPostgre implements RepositorioAlquiler {
 
     @Override
     public List<AlquilerResumenDto> listar() {
-        List<AlquilerResumenDto> alquiler = new ArrayList<>();
 
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.getValues();
 
-        alquiler = this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
+        List<AlquilerResumenDto> alquiler = this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
                 .query(sqlConsultar, paramSource, mapeoAlquiler );
 
         return alquiler.stream().map(alqui -> new AlquilerResumenDto(alqui.getTiempoAlquilado(),alqui.getFechaAlquiler(),

@@ -9,9 +9,8 @@ import java.time.format.DateTimeFormatter;
 @Service
 public class ServicioCalcularTimpoDevolucionAlquiler {
 
-    public String CalcularFechaDevolucon(Alquiler alquiler)
+    public String calcularFechaDevolucon(Alquiler alquiler)
     {
-
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
@@ -23,9 +22,8 @@ public class ServicioCalcularTimpoDevolucionAlquiler {
     }
     private String obtenerTextoFecha(LocalDate date)
     {
-        String FORMATO_DD_MM_YYYY = "dd/MM/yyyy";
 
-        DateTimeFormatter patron = DateTimeFormatter.ofPattern(FORMATO_DD_MM_YYYY);
+        DateTimeFormatter patron = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return patron.format(date);
     }
 

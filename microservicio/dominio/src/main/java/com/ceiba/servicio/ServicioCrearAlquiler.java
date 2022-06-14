@@ -18,8 +18,8 @@ public class ServicioCrearAlquiler {
     }
     public int crear(Alquiler alquiler)
     {
-        String fechaDevolucionCalculada =this.servicioCalcularTimpoDevolucionAlquiler.CalcularFechaDevolucon(alquiler);
-        int pago =this.servicioCalcularPago.CalcularPago(alquiler);
+        String fechaDevolucionCalculada =this.servicioCalcularTimpoDevolucionAlquiler.calcularFechaDevolucon(alquiler);
+        int pago =this.servicioCalcularPago.calcularPago(alquiler);
         AlquilerResumenDto alquilerResumen = new AlquilerResumenDto(alquiler.getTiempoAlquilado(),
                 alquiler.getFechaAlquiler(),alquiler.getFechaDevolucion(),fechaDevolucionCalculada,pago);
         return this.repositorioAlquiler.crear(alquilerResumen);

@@ -15,7 +15,7 @@ public class ServicioCalcularPagoTest {
 
         ServicioCalcularPago servicio = new ServicioCalcularPago(new ServicioCalcularTimpoDevolucionAlquiler());
 
-        int pago = servicio.CalcularPago(alquiler);
+        int pago = servicio.calcularPago(alquiler);
 
         Assertions.assertEquals(200000,pago);
     }
@@ -29,7 +29,7 @@ public class ServicioCalcularPagoTest {
 
         ServicioCalcularPago servicio = new ServicioCalcularPago(new ServicioCalcularTimpoDevolucionAlquiler());
 
-        int pago = servicio.CalcularPago(alquiler);
+        int pago = servicio.calcularPago(alquiler);
 
         Assertions.assertEquals(260000,pago);
     }
@@ -43,7 +43,7 @@ public class ServicioCalcularPagoTest {
 
         ServicioCalcularPago servicio = new ServicioCalcularPago(new ServicioCalcularTimpoDevolucionAlquiler());
 
-        int pago = servicio.CalcularPago(alquiler);
+        int pago = servicio.calcularPago(alquiler);
 
         Assertions.assertEquals(200000,pago);
     }

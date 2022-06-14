@@ -17,9 +17,9 @@ public class ServicioCalcularPago {
         this.servicioCalcularTimpoDevolucionAlquiler = servicioCalcularTimpoDevolucionAlquiler;
     }
 
-    public int CalcularPago(Alquiler alquiler)
+    public int calcularPago(Alquiler alquiler)
     {
-        String fechadevolucionCalculada = this.servicioCalcularTimpoDevolucionAlquiler.CalcularFechaDevolucon(alquiler);
+        String fechadevolucionCalculada = this.servicioCalcularTimpoDevolucionAlquiler.calcularFechaDevolucon(alquiler);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate fechadevolucionReal = LocalDate.parse(alquiler.getFechaDevolucion(), formatter);
         LocalDate fechadevolucion = LocalDate.parse(fechadevolucionCalculada,formatter);

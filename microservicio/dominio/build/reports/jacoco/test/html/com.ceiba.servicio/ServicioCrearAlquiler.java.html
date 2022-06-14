@@ -11,18 +11,18 @@ public class ServicioCrearAlquiler {
     private final ServicioCalcularPago servicioCalcularPago;
     private final ServicioCalcularTimpoDevolucionAlquiler servicioCalcularTimpoDevolucionAlquiler;
 
-<span class="fc" id="L14">    public ServicioCrearAlquiler(RepositorioAlquiler repositorioAlquiler, ServicioCalcularPago servicioCalcularPago, ServicioCalcularTimpoDevolucionAlquiler servicioCalcularTimpoDevolucionAlquiler) {</span>
-<span class="fc" id="L15">        this.repositorioAlquiler = repositorioAlquiler;</span>
-<span class="fc" id="L16">        this.servicioCalcularPago = servicioCalcularPago;</span>
-<span class="fc" id="L17">        this.servicioCalcularTimpoDevolucionAlquiler = servicioCalcularTimpoDevolucionAlquiler;</span>
-<span class="fc" id="L18">    }</span>
+<span class="nc" id="L14">    public ServicioCrearAlquiler(RepositorioAlquiler repositorioAlquiler, ServicioCalcularPago servicioCalcularPago, ServicioCalcularTimpoDevolucionAlquiler servicioCalcularTimpoDevolucionAlquiler) {</span>
+<span class="nc" id="L15">        this.repositorioAlquiler = repositorioAlquiler;</span>
+<span class="nc" id="L16">        this.servicioCalcularPago = servicioCalcularPago;</span>
+<span class="nc" id="L17">        this.servicioCalcularTimpoDevolucionAlquiler = servicioCalcularTimpoDevolucionAlquiler;</span>
+<span class="nc" id="L18">    }</span>
     public int crear(Alquiler alquiler)
     {
-<span class="fc" id="L21">        String fechaDevolucionCalculada =this.servicioCalcularTimpoDevolucionAlquiler.CalcularFechaDevolucon(alquiler);</span>
-<span class="fc" id="L22">        int pago =this.servicioCalcularPago.CalcularPago(alquiler);</span>
-<span class="fc" id="L23">        AlquilerResumenDto alquilerResumen = new AlquilerResumenDto(alquiler.getTiempoAlquilado(),</span>
-<span class="fc" id="L24">                alquiler.getFechaAlquiler(),alquiler.getFechaDevolucion(),fechaDevolucionCalculada,pago);</span>
-<span class="fc" id="L25">        return this.repositorioAlquiler.crear(alquilerResumen);</span>
+<span class="nc" id="L21">        String fechaDevolucionCalculada =this.servicioCalcularTimpoDevolucionAlquiler.calcularFechaDevolucon(alquiler);</span>
+<span class="nc" id="L22">        int pago =this.servicioCalcularPago.calcularPago(alquiler);</span>
+<span class="nc" id="L23">        AlquilerResumenDto alquilerResumen = new AlquilerResumenDto(alquiler.getTiempoAlquilado(),</span>
+<span class="nc" id="L24">                alquiler.getFechaAlquiler(),alquiler.getFechaDevolucion(),fechaDevolucionCalculada,pago);</span>
+<span class="nc" id="L25">        return this.repositorioAlquiler.crear(alquilerResumen);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

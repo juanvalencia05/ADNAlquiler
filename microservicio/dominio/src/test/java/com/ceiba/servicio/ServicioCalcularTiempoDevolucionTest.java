@@ -15,7 +15,7 @@ public class ServicioCalcularTiempoDevolucionTest {
 
         ServicioCalcularTimpoDevolucionAlquiler servicio= new ServicioCalcularTimpoDevolucionAlquiler();
 
-        String fecha = servicio.CalcularFechaDevolucon(alquiler);
+        String fecha = servicio.calcularFechaDevolucon(alquiler);
 
         Assertions.assertEquals("12/06/2022",fecha);
 
