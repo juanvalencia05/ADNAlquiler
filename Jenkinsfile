@@ -13,7 +13,7 @@ pipeline {
 
   //Una sección que define las herramientas “preinstaladas” en Jenkins
   tools {
-    jdk 'JDK17_Centos' //Verisión preinstalada en la Configuración del Master
+    jdk 'JDK14_Centos' //Verisión preinstalada en la Configuración del Master
   }
 /*	Versiones disponibles
       JDK8_Mac
@@ -34,17 +34,13 @@ pipeline {
         checkout scm
       }
     }
-    stage('clean') {
-      steps{
-            sh 'chmod +x ./microservicio/gradlew'
-            sh './microservicio/gradlew --b ./microservicio/build.gradle clean'
-      }
-    }
+  
     stage('Compile & Unit Tests') {
        steps{
-             echo "------------>compile & Unit Tests<------------"
-             sh 'chmod +x ./microservicio/gradlew'
-             sh './microservicio/gradlew --b ./microservicio/build.gradle test'
+		echo "------------>Unit Tests<------------"
+		sh 'gradle --b ./build.gradle test'
+		junit '**/build/test-results/test/*.xml' //aggregate test results - JUnit
+		sh 'gradle --b ./build.gradle jacocoTestReport'
        }
     }
 
@@ -60,8 +56,8 @@ pipeline {
 
     stage('Build') {
       steps {
-        echo "------------>Build<------------"
-        sh './microservicio/gradlew --b ./microservicio/build.gradle build -x test'
+		echo "------------>Build<------------"
+		sh 'gradle build -x test'
       }
     }
   }

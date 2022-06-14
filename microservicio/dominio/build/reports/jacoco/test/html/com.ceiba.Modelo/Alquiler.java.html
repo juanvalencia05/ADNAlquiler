@@ -5,38 +5,38 @@ import lombok.Getter;
 @Getter
 public class Alquiler {
 
-<span class="nc" id="L8">    private final int tiempoAlquilado;</span>
-<span class="nc" id="L9">    private final String fechaAlquiler;</span>
-<span class="nc" id="L10">    private final  String  fechaDevolucion;</span>
+<span class="fc" id="L8">    private final int tiempoAlquilado;</span>
+<span class="fc" id="L9">    private final String fechaAlquiler;</span>
+<span class="fc" id="L10">    private final  String  fechaDevolucion;</span>
 
     public static Alquiler of(int tiempoAlquilado, String fechaAlquiler, String fechaDevolucion )
     {
-<span class="nc" id="L14">        validarDiferenteDeCero(tiempoAlquilado, &quot;El numero de dias de Alquiler no puede ser cero , ni negativo&quot;);</span>
-<span class="nc" id="L15">        validarObligatorio(fechaAlquiler,&quot;La fecha del dia del alquiler no puede estar vacia&quot;);</span>
-<span class="nc" id="L16">        validarObligatorio(fechaDevolucion,&quot;La fecha del dia de devolucion no puede estar vacia&quot;);</span>
+<span class="fc" id="L14">        validarDiferenteDeCero(tiempoAlquilado, &quot;El numero de dias de Alquiler no puede ser cero , ni negativo&quot;);</span>
+<span class="fc" id="L15">        validarObligatorio(fechaAlquiler,&quot;La fecha del dia del alquiler no puede estar vacia&quot;);</span>
+<span class="fc" id="L16">        validarObligatorio(fechaDevolucion,&quot;La fecha del dia de devolucion no puede estar vacia&quot;);</span>
 
-<span class="nc" id="L18">        return new Alquiler(tiempoAlquilado,fechaAlquiler, fechaDevolucion);</span>
+<span class="fc" id="L18">        return new Alquiler(tiempoAlquilado,fechaAlquiler, fechaDevolucion);</span>
     }
 
-<span class="nc" id="L21">    public Alquiler(int tiempoAlquilado, String fechaAlquiler, String fechaDevolucion) {</span>
-<span class="nc" id="L22">        this.tiempoAlquilado = tiempoAlquilado;</span>
-<span class="nc" id="L23">        this.fechaAlquiler = fechaAlquiler;</span>
-<span class="nc" id="L24">        this.fechaDevolucion = fechaDevolucion;</span>
-<span class="nc" id="L25">    }</span>
+<span class="fc" id="L21">    public Alquiler(int tiempoAlquilado, String fechaAlquiler, String fechaDevolucion) {</span>
+<span class="fc" id="L22">        this.tiempoAlquilado = tiempoAlquilado;</span>
+<span class="fc" id="L23">        this.fechaAlquiler = fechaAlquiler;</span>
+<span class="fc" id="L24">        this.fechaDevolucion = fechaDevolucion;</span>
+<span class="fc" id="L25">    }</span>
 
     public static void validarObligatorio(String valor, String mensaje)
     {
-<span class="nc bnc" id="L29" title="All 4 branches missed.">        if(valor== null || valor.isEmpty())</span>
+<span class="pc bpc" id="L29" title="2 of 4 branches missed.">        if(valor== null || valor.isEmpty())</span>
         {
 <span class="nc" id="L31">            throw new IllegalArgumentException(mensaje);</span>
         }
-<span class="nc" id="L33">    }</span>
+<span class="fc" id="L33">    }</span>
     public static void validarDiferenteDeCero(int valor, String mensaje)
     {
-<span class="nc bnc" id="L36" title="All 4 branches missed.">        if (valor==0 || valor &lt; 0)</span>
+<span class="pc bpc" id="L36" title="2 of 4 branches missed.">        if (valor==0 || valor &lt; 0)</span>
         {
 <span class="nc" id="L38">            throw new IllegalArgumentException(mensaje);</span>
         }
-<span class="nc" id="L40">    }</span>
+<span class="fc" id="L40">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
