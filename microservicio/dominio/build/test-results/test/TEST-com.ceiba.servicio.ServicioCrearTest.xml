@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.servicio.ServicioCrearTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-13T20:43:15" hostname="JUANP-VALENCIA" time="2.062">
+<testsuite name="com.ceiba.servicio.ServicioCrearTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-14T17:19:01" hostname="JUANP-VALENCIA" time="2.147">
   <properties/>
-  <testcase name="guardarExitoso()" classname="com.ceiba.servicio.ServicioCrearTest" time="2.062"/>
+  <testcase name="guardarExitoso()" classname="com.ceiba.servicio.ServicioCrearTest" time="2.147"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

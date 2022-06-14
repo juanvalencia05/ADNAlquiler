@@ -26,16 +26,16 @@ public class Alquiler {
 
     public static void validarObligatorio(String valor, String mensaje)
     {
-<span class="pc bpc" id="L29" title="2 of 4 branches missed.">        if(valor== null || valor.isEmpty())</span>
+<span class="pc bpc" id="L29" title="1 of 4 branches missed.">        if(valor== null || valor.isEmpty())</span>
         {
-<span class="nc" id="L31">            throw new IllegalArgumentException(mensaje);</span>
+<span class="fc" id="L31">            throw new IllegalArgumentException(mensaje);</span>
         }
 <span class="fc" id="L33">    }</span>
     public static void validarDiferenteDeCero(int valor, String mensaje)
     {
-<span class="pc bpc" id="L36" title="2 of 4 branches missed.">        if (valor==0 || valor &lt; 0)</span>
+<span class="pc bpc" id="L36" title="1 of 4 branches missed.">        if (valor==0 || valor &lt; 0)</span>
         {
-<span class="nc" id="L38">            throw new IllegalArgumentException(mensaje);</span>
+<span class="fc" id="L38">            throw new IllegalArgumentException(mensaje);</span>
         }
 <span class="fc" id="L40">    }</span>
 }
