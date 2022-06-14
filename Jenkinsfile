@@ -38,7 +38,7 @@ pipeline {
        steps{
              echo "------------>compile & Unit Tests<------------"
              sh 'chmod +x ./microservicio/gradlew'
-             sh './microservicio/gradlew --b ./microservicio/build.gradle test'
+             sh '../microservicio/gradlew --b ../microservicio/build.gradle test'
        }
     }
 
@@ -55,7 +55,7 @@ pipeline {
     stage('Build') {
       steps {
         echo "------------>Build<------------"
-        sh './microservicio/gradlew --b ./microservicio/build.gradle build -x test'
+        sh '../microservicio/gradlew --b ../microservicio/build.gradle build -x test'
       }
     }
   }
