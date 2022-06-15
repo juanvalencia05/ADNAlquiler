@@ -13,33 +13,33 @@ public class ServicioCalcularPago {
 
     private final ServicioCalcularTimpoDevolucionAlquiler servicioCalcularTimpoDevolucionAlquiler;
 
-<span class="nc" id="L16">    public ServicioCalcularPago(ServicioCalcularTimpoDevolucionAlquiler servicioCalcularTimpoDevolucionAlquiler) {</span>
-<span class="nc" id="L17">        this.servicioCalcularTimpoDevolucionAlquiler = servicioCalcularTimpoDevolucionAlquiler;</span>
-<span class="nc" id="L18">    }</span>
+<span class="fc" id="L16">    public ServicioCalcularPago(ServicioCalcularTimpoDevolucionAlquiler servicioCalcularTimpoDevolucionAlquiler) {</span>
+<span class="fc" id="L17">        this.servicioCalcularTimpoDevolucionAlquiler = servicioCalcularTimpoDevolucionAlquiler;</span>
+<span class="fc" id="L18">    }</span>
 
     public int calcularPago(Alquiler alquiler)
     {
-<span class="nc" id="L22">        String fechadevolucionCalculada = this.servicioCalcularTimpoDevolucionAlquiler.calcularFechaDevolucon(alquiler);</span>
-<span class="nc" id="L23">        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(&quot;dd/MM/yyyy&quot;);</span>
-<span class="nc" id="L24">        LocalDate fechadevolucionReal = LocalDate.parse(alquiler.getFechaDevolucion(), formatter);</span>
-<span class="nc" id="L25">        LocalDate fechadevolucion = LocalDate.parse(fechadevolucionCalculada,formatter);</span>
+<span class="fc" id="L22">        String fechadevolucionCalculada = this.servicioCalcularTimpoDevolucionAlquiler.calcularFechaDevolucon(alquiler);</span>
+<span class="fc" id="L23">        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(&quot;dd/MM/yyyy&quot;);</span>
+<span class="fc" id="L24">        LocalDate fechadevolucionReal = LocalDate.parse(alquiler.getFechaDevolucion(), formatter);</span>
+<span class="fc" id="L25">        LocalDate fechadevolucion = LocalDate.parse(fechadevolucionCalculada,formatter);</span>
 
-<span class="nc bnc" id="L27" title="All 2 branches missed.">        if(alquiler.getFechaDevolucion().equals(fechadevolucionCalculada))</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        if(alquiler.getFechaDevolucion().equals(fechadevolucionCalculada))</span>
         {
-<span class="nc" id="L29">              return alquiler.getTiempoAlquilado()*VALOR_DIA;</span>
+<span class="fc" id="L29">              return alquiler.getTiempoAlquilado()*VALOR_DIA;</span>
 
         } else{
 
-<span class="nc" id="L33">            Long dias = DAYS.between(fechadevolucion,fechadevolucionReal);</span>
+<span class="fc" id="L33">            Long dias = DAYS.between(fechadevolucion,fechadevolucionReal);</span>
 
-<span class="nc bnc" id="L35" title="All 2 branches missed.">            if(dias&lt;0)</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">            if(dias&lt;0)</span>
             {
-<span class="nc" id="L37">                return (int) (dias+ alquiler.getTiempoAlquilado())*VALOR_DIA;</span>
+<span class="fc" id="L37">                return (int) (dias+ alquiler.getTiempoAlquilado())*VALOR_DIA;</span>
             }else
             {
-<span class="nc" id="L40">                int pago = alquiler.getTiempoAlquilado()*VALOR_DIA;</span>
-<span class="nc" id="L41">                int pagoMulta = (int) (dias*VALOR_MULTA);</span>
-<span class="nc" id="L42">                return pago+pagoMulta;</span>
+<span class="fc" id="L40">                int pago = alquiler.getTiempoAlquilado()*VALOR_DIA;</span>
+<span class="fc" id="L41">                int pagoMulta = (int) (dias*VALOR_MULTA);</span>
+<span class="fc" id="L42">                return pago+pagoMulta;</span>
             }
         }
     }

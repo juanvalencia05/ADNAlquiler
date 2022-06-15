@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ceiba.modelo.AlquilerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-06-15T15:49:50" hostname="JUANP-VALENCIA" time="0.01">
+  <properties/>
+  <testcase name="ValidarCamposFaltante()" classname="com.ceiba.modelo.AlquilerTest" time="0.008"/>
+  <testcase name="validarCreacionExitos()" classname="com.ceiba.modelo.AlquilerTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
