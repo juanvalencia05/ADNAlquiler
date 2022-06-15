@@ -17,9 +17,9 @@ public class ServicioEliminarAlquiler {
 
     public int eliminar(int id)
     {
-<span class="fc bfc" id="L20" title="All 2 branches covered.">        if(this.repositorioAlquiler.consultarPorId(id) == null)</span>
+<span class="pc bpc" id="L20" title="1 of 2 branches missed.">        if(this.repositorioAlquiler.consultarPorId(id) == null)</span>
         {
-<span class="fc" id="L22">            throw new IllegalStateException(MENSAJE_NO_EXISTE);</span>
+<span class="nc" id="L22">            throw new IllegalStateException(MENSAJE_NO_EXISTE);</span>
         }
 <span class="fc" id="L24">        return this.repositorioAlquiler.eliminar(id);</span>
     }
