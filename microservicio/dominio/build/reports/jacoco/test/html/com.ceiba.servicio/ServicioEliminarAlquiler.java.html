@@ -10,15 +10,15 @@ public class ServicioEliminarAlquiler {
 
     private final RepositorioAlquiler repositorioAlquiler;
 
-<span class="nc" id="L13">    public ServicioEliminarAlquiler(RepositorioAlquiler repositorioAlquiler) {</span>
-<span class="nc" id="L14">        this.repositorioAlquiler = repositorioAlquiler;</span>
-<span class="nc" id="L15">    }</span>
+<span class="fc" id="L13">    public ServicioEliminarAlquiler(RepositorioAlquiler repositorioAlquiler) {</span>
+<span class="fc" id="L14">        this.repositorioAlquiler = repositorioAlquiler;</span>
+<span class="fc" id="L15">    }</span>
 
     public int eliminar(int id)
     {
-<span class="nc bnc" id="L19" title="All 2 branches missed.">        if(this.repositorioAlquiler.consultarPorId(id) == null)</span>
+<span class="pc bpc" id="L19" title="1 of 2 branches missed.">        if(this.repositorioAlquiler.consultarPorId(id) == null)</span>
         {
-<span class="nc" id="L21">            throw new IllegalArgumentException(MENSAJE_NO_EXISTE);</span>
+<span class="fc" id="L21">            throw new IllegalStateException(MENSAJE_NO_EXISTE);</span>
         }
 <span class="nc" id="L23">        return this.repositorioAlquiler.eliminar(id);</span>
     }

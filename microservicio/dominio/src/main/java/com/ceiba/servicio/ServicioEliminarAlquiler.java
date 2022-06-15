@@ -18,7 +18,7 @@ public class ServicioEliminarAlquiler {
     {
         if(this.repositorioAlquiler.consultarPorId(id) == null)
         {
-            throw new IllegalArgumentException(MENSAJE_NO_EXISTE);
+            throw new IllegalStateException(MENSAJE_NO_EXISTE);
         }
         return this.repositorioAlquiler.eliminar(id);
     }

@@ -32,15 +32,14 @@ public class ServicioCalcularPago {
 
 <span class="nc" id="L33">            Long dias = DAYS.between(fechadevolucion,fechadevolucionReal);</span>
 
-
-<span class="nc bnc" id="L36" title="All 2 branches missed.">            if(dias&lt;0)</span>
+<span class="nc bnc" id="L35" title="All 2 branches missed.">            if(dias&lt;0)</span>
             {
-<span class="nc" id="L38">                return (int) (dias+ alquiler.getTiempoAlquilado())*VALOR_DIA;</span>
+<span class="nc" id="L37">                return (int) (dias+ alquiler.getTiempoAlquilado())*VALOR_DIA;</span>
             }else
             {
-<span class="nc" id="L41">                int pago = alquiler.getTiempoAlquilado()*VALOR_DIA;</span>
-<span class="nc" id="L42">                int pagoMulta = (int) (dias*VALOR_MULTA);</span>
-<span class="nc" id="L43">                return pago+pagoMulta;</span>
+<span class="nc" id="L40">                int pago = alquiler.getTiempoAlquilado()*VALOR_DIA;</span>
+<span class="nc" id="L41">                int pagoMulta = (int) (dias*VALOR_MULTA);</span>
+<span class="nc" id="L42">                return pago+pagoMulta;</span>
             }
         }
     }

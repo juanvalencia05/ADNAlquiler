@@ -14,7 +14,7 @@ public class ServicioEliminarTest {
 
         ServicioEliminarAlquiler servicioEliminarAlquiler = new ServicioEliminarAlquiler(repositorioAlquiler);
 
-        BasePrueba.assertThrows(()->servicioEliminarAlquiler.eliminar(Mockito.anyInt()),IllegalArgumentException.class
+        BasePrueba.assertThrows(()->servicioEliminarAlquiler.eliminar(Mockito.anyInt()),IllegalStateException.class
         ,"No existe el Alquiler con los datos ingresados");
 
     }

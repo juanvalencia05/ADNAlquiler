@@ -32,7 +32,6 @@ public class ServicioCalcularPago {
 
             Long dias = DAYS.between(fechadevolucion,fechadevolucionReal);
 
-
             if(dias<0)
             {
                 return (int) (dias+ alquiler.getTiempoAlquilado())*VALOR_DIA;
