@@ -35,9 +35,6 @@ public class RepositorioAlquilerPostgre implements RepositorioAlquiler {
     @SqlStatement(namespace = "alquiler", value = "consultar")
     private static String sqlConsultar;
 
-    @SqlStatement(namespace = "alquiler", value = "existe")
-    private static String sqlExiste;
-
 
     @Override
     public int crear(AlquilerResumenDto alquilerResumenDto) {
@@ -59,15 +56,7 @@ public class RepositorioAlquilerPostgre implements RepositorioAlquiler {
                         .queryForObject(sqlObtenerAlquilePorId,paramSource, new MapeoAlquiler()));
 
     }
-
-    @Override
-    public boolean existe(int id) {
-        MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("id",id);
-        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste,paramSource,Boolean.class);
-
-    }
-
+    
     @Override
     public int eliminar(int id) {
 
