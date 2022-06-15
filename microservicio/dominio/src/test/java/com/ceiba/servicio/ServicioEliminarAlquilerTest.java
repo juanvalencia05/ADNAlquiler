@@ -1,6 +1,6 @@
 package com.ceiba.servicio;
 
-import com.ceiba.BasePrueba;
+
 import com.ceiba.dto.AlquilerResumenDto;
 import com.ceiba.puerto.RepositorioAlquiler;
 import org.junit.jupiter.api.Test;
@@ -13,7 +13,7 @@ public class ServicioEliminarAlquilerTest {
     {
         AlquilerResumenDto alquilerResumenDto = new AlquilerResumenDto();
         var repositorioAlquiler = Mockito.mock(RepositorioAlquiler.class);
-        Mockito.when(repositorioAlquiler.consultarPorId(1)).thenReturn(alquilerResumenDto);
+        Mockito.when(repositorioAlquiler.consultarPorId(Mockito.anyInt())).thenReturn(alquilerResumenDto);
 
         ServicioEliminarAlquiler servicioEliminarAlquiler = new ServicioEliminarAlquiler(repositorioAlquiler);
         servicioEliminarAlquiler.eliminar(1);
