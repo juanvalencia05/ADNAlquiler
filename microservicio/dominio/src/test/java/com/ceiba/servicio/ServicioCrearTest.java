@@ -10,7 +10,7 @@ import org.mockito.Mockito;
 public class ServicioCrearTest {
 
     @Test
-    void guardarExitoso()
+    void crearExitoso()
     {
         var alquiler = new AlquilerTestDataBuilder().build();
 
@@ -28,4 +28,6 @@ public class ServicioCrearTest {
 
         Assertions.assertEquals(1,id);
     }
+
+
 }
