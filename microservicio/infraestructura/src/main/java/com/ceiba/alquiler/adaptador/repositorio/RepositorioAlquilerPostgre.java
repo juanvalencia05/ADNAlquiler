@@ -56,7 +56,7 @@ public class RepositorioAlquilerPostgre implements RepositorioAlquiler {
                         .queryForObject(sqlObtenerAlquilePorId,paramSource, new MapeoAlquiler()));
 
     }
-    
+
     @Override
     public int eliminar(int id) {
 

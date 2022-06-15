@@ -58,33 +58,27 @@ public class RepositorioAlquilerPostgre implements RepositorioAlquiler {
     }
 
     @Override
-    public boolean existe(AlquilerResumenDto alquilerResumenDto) {
-<span class="nc" id="L62">        return false;</span>
-    }
-
-    @Override
     public int eliminar(int id) {
 
-<span class="nc" id="L68">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L69">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="nc" id="L70">        EjecucionBaseDeDatos.obtenerUnObjetoONull(()-&gt;</span>
-<span class="nc" id="L71">                this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar,paramSource));</span>
+<span class="fc" id="L63">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L64">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="fc" id="L65">        EjecucionBaseDeDatos.obtenerUnObjetoONull(()-&gt;</span>
+<span class="fc" id="L66">                this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar,paramSource));</span>
 
-<span class="nc" id="L73">        return id;</span>
+<span class="fc" id="L68">        return id;</span>
     }
 
     @Override
     public List&lt;AlquilerResumenDto&gt; listar() {
-<span class="fc" id="L78">        List&lt;AlquilerResumenDto&gt; alquiler = new ArrayList&lt;&gt;();</span>
 
-<span class="fc" id="L80">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L81">        paramSource.getValues();</span>
+<span class="fc" id="L74">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L75">        paramSource.getValues();</span>
 
-<span class="fc" id="L83">        alquiler = this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
-<span class="fc" id="L84">                .query(sqlConsultar, paramSource, mapeoAlquiler );</span>
+<span class="fc" id="L77">        List&lt;AlquilerResumenDto&gt; alquiler = this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
+<span class="fc" id="L78">                .query(sqlConsultar, paramSource, mapeoAlquiler );</span>
 
-<span class="fc" id="L86">        return alquiler.stream().map(alqui -&gt; new AlquilerResumenDto(alqui.getTiempoAlquilado(),alqui.getFechaAlquiler(),</span>
-<span class="fc" id="L87">                alqui.getFechaDevolucion(),alqui.getFechaDevolucionReal(),alqui.getTotalAPagar())).toList();</span>
+<span class="fc" id="L80">        return alquiler.stream().map(alqui -&gt; new AlquilerResumenDto(alqui.getTiempoAlquilado(),alqui.getFechaAlquiler(),</span>
+<span class="fc" id="L81">                alqui.getFechaDevolucion(),alqui.getFechaDevolucionReal(),alqui.getTotalAPagar())).toList();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

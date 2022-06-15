@@ -17,13 +17,13 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
-
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.core.Is.is;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(ControladorAlquiler.class)
@@ -40,7 +40,7 @@ public class ControladoAlquilerTest {
     private RepositorioAlquiler repositorioAlquiler;
 
     @Test
-    void crearTest() throws Exception {
+    void crearAlquilerTest() throws Exception {
         var dto = new DtoAlquilerDataBuilder().build();
 
         crear(dto);
@@ -70,7 +70,7 @@ public class ControladoAlquilerTest {
     }
 
     @Test
-    @DisplayName("Debe listar los usuarios luego de crearlas")
+    @DisplayName("Debe listar los alquiler luego de crearlas")
     void listarTest() throws Exception {
 
         var dto = new DtoAlquilerDataBuilder().build();
@@ -84,5 +84,22 @@ public class ControladoAlquilerTest {
                 .andExpect(jsonPath("$[0].fechaAlquiler",is(dto.getFechaAlquiler())))
                 .andExpect(jsonPath("$[0].fechaDevolucion", is(dto.getFechaDevolucion())));
     }
+    
+    @Test
+    @DisplayName("Deberia eliminar un vehiculo")
+    void deberiaEliminarVehiculo() throws Exception {
+        // arrange
+        int  id = 1;
+        // act - assert
+        mocMvc.perform(delete("/alquiler/{id}",id)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().is2xxSuccessful());
 
+        mocMvc.perform(get("/alquiler")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(0)));
+
+    }
 }
