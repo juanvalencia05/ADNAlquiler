@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.servicio.ServicioEliminarTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-15T12:45:32" hostname="JUANP-VALENCIA" time="2.785">
+<testsuite name="com.ceiba.servicio.ServicioEliminarTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-15T12:55:23" hostname="JUANP-VALENCIA" time="2.159">
   <properties/>
-  <testcase name="debeLanzarUnaExcepcionEliminandoAlquiler()" classname="com.ceiba.servicio.ServicioEliminarTest" time="2.785"/>
+  <testcase name="debeLanzarUnaExcepcionEliminandoAlquiler()" classname="com.ceiba.servicio.ServicioEliminarTest" time="2.159"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
