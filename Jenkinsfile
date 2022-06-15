@@ -43,7 +43,6 @@ pipeline {
        }
     }
 
-
     stage('Static Code Analysis') {
       steps{
         echo '------------>Análisis de código estático<------------'
