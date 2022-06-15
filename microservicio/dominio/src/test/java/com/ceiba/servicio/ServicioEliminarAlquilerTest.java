@@ -12,7 +12,7 @@ public class ServicioEliminarAlquilerTest {
     void existaAlquiler()
     {
         AlquilerResumenDto alquilerResumenDto = new AlquilerResumenDto();
-        RepositorioAlquiler repositorioAlquiler = Mockito.mock(RepositorioAlquiler.class);
+        var repositorioAlquiler = Mockito.mock(RepositorioAlquiler.class);
         Mockito.when(repositorioAlquiler.consultarPorId(1)).thenReturn(alquilerResumenDto);
 
         ServicioEliminarAlquiler servicioEliminarAlquiler = new ServicioEliminarAlquiler(repositorioAlquiler);
