@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 public class ServicioEliminarTest {
-   /* @Test
+    @Test
     void debeLanzarUnaExcepcionEliminandoAlquiler()
     {
         RepositorioAlquiler repositorioAlquiler = Mockito.mock(RepositorioAlquiler.class);
@@ -18,5 +18,5 @@ public class ServicioEliminarTest {
         BasePrueba.assertThrows(()->servicioEliminarAlquiler.eliminar(Mockito.anyInt()), ExcepcionDuplicidad.class
         ,"No existe el Alquiler con los datos ingresados");
 
-    }*/
+    }
 }
