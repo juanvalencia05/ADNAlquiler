@@ -11,7 +11,7 @@ public class ServicioEliminarAlquilerTest {
     void noExistaAlquiler()
     {
         RepositorioAlquiler repositorioAlquiler = Mockito.mock(RepositorioAlquiler.class);
-        Mockito.when(repositorioAlquiler.existe(Mockito.anyInt())).thenReturn(true);
+        Mockito.when(repositorioAlquiler.existe(Mockito.anyInt())).thenReturn(false);
 
         ServicioEliminarAlquiler servicioEliminarAlquiler = new ServicioEliminarAlquiler(repositorioAlquiler);
 
