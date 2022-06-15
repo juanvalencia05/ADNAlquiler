@@ -1,6 +1,6 @@
 package com.ceiba.servicio;
 
-import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
+
 import com.ceiba.puerto.RepositorioAlquiler;
 import org.springframework.stereotype.Service;
 
