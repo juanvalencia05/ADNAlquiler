@@ -1,16 +1,17 @@
-package com.ceiba.servicio;
+package com.ceiba.alquiler.comando.manejador;
 
 import com.ceiba.modelo.dto.DtoAlquiler;
 import com.ceiba.modelo.dto.DtoRespuesta;
 import com.ceiba.modelo.entidad.Alquiler;
+import com.ceiba.servicio.ServicioCrearAlquiler;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ServicioAplicacionCrearAlquiler {
+public class ManejadorCrearAlquiler {
 
     private final ServicioCrearAlquiler servicioCrearAlquiler;
 
-    public ServicioAplicacionCrearAlquiler(ServicioCrearAlquiler servicioCrearAlquiler) {
+    public ManejadorCrearAlquiler(ServicioCrearAlquiler servicioCrearAlquiler) {
         this.servicioCrearAlquiler = servicioCrearAlquiler;
     }
 

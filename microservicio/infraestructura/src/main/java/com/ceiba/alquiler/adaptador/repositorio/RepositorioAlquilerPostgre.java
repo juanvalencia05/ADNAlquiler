@@ -1,6 +1,5 @@
 package com.ceiba.alquiler.adaptador.repositorio;
 
-import com.ceiba.alquiler.adaptador.dao.MapeoAlquiler;
 import com.ceiba.dto.AlquilerResumenDto;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.EjecucionBaseDeDatos;
@@ -14,11 +13,11 @@ import org.springframework.stereotype.Repository;
 public class RepositorioAlquilerPostgre implements RepositorioAlquiler {
 
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
-    private final MapeoAlquiler mapeoAlquiler;
 
-    public RepositorioAlquilerPostgre(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, MapeoAlquiler mapeoAlquiler) {
+
+    public RepositorioAlquilerPostgre(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
-        this.mapeoAlquiler = mapeoAlquiler;
+
     }
 
     @SqlStatement(namespace = "alquiler", value = "crear")
@@ -26,7 +25,6 @@ public class RepositorioAlquilerPostgre implements RepositorioAlquiler {
 
     @SqlStatement(namespace = "alquiler", value = "eliminar")
     private static String sqlEliminar;
-
 
     @Override
     public int crear(AlquilerResumenDto alquilerResumenDto) {

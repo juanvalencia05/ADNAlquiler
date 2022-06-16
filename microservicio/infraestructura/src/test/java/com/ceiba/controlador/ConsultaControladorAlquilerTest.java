@@ -2,7 +2,7 @@ package com.ceiba.controlador;
 
 import com.ceiba.ApplicationMock;
 
-import com.ceiba.alquiler.controlador.ConsutarControladorAlquiler;
+import com.ceiba.alquiler.controlador.ConsultarControladorAlquiler;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -20,7 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @ExtendWith(SpringExtension.class)
-@WebMvcTest(ConsutarControladorAlquiler.class)
+@WebMvcTest(ConsultarControladorAlquiler.class)
 @ContextConfiguration(classes = ApplicationMock.class)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class ConsultaControladorAlquilerTest {

@@ -1,4 +1,4 @@
-package com.ceiba.servicio;
+package com.ceiba.alquiler.consulta;
 
 import com.ceiba.dto.AlquilerResumenDto;
 import com.ceiba.puerto.dao.DaoAlquiler;
@@ -6,11 +6,11 @@ import com.ceiba.puerto.dao.DaoAlquiler;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ServicioAplicacionConsultarAlquiler {
+public class ManejadorConsultarAlquiler {
 
     private final DaoAlquiler daoAlquiler;
 
-    public ServicioAplicacionConsultarAlquiler(DaoAlquiler daoAlquiler) {
+    public ManejadorConsultarAlquiler(DaoAlquiler daoAlquiler) {
         this.daoAlquiler = daoAlquiler;
     }
 

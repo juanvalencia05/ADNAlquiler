@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RepositorioAlquilerPostgre.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.alquiler.adaptador.repositorio</a> &gt; <span class="el_source">RepositorioAlquilerPostgre.java</span></div><h1>RepositorioAlquilerPostgre.java</h1><pre class="source lang-java linenums">package com.ceiba.alquiler.adaptador.repositorio;
 
-import com.ceiba.alquiler.adaptador.dao.MapeoAlquiler;
 import com.ceiba.dto.AlquilerResumenDto;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.EjecucionBaseDeDatos;
@@ -14,12 +13,12 @@ import org.springframework.stereotype.Repository;
 public class RepositorioAlquilerPostgre implements RepositorioAlquiler {
 
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
-    private final MapeoAlquiler mapeoAlquiler;
 
-<span class="fc" id="L19">    public RepositorioAlquilerPostgre(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, MapeoAlquiler mapeoAlquiler) {</span>
-<span class="fc" id="L20">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
-<span class="fc" id="L21">        this.mapeoAlquiler = mapeoAlquiler;</span>
-<span class="fc" id="L22">    }</span>
+
+<span class="fc" id="L18">    public RepositorioAlquilerPostgre(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
+<span class="fc" id="L19">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+
+<span class="fc" id="L21">    }</span>
 
     @SqlStatement(namespace = &quot;alquiler&quot;, value = &quot;crear&quot;)
     private static String sqlCrear;
@@ -27,27 +26,26 @@ public class RepositorioAlquilerPostgre implements RepositorioAlquiler {
     @SqlStatement(namespace = &quot;alquiler&quot;, value = &quot;eliminar&quot;)
     private static String sqlEliminar;
 
-
     @Override
     public int crear(AlquilerResumenDto alquilerResumenDto) {
-<span class="fc" id="L33">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L34">        paramSource.addValue(&quot;tiempo_alquiler&quot;, alquilerResumenDto.getTiempoAlquilado());</span>
-<span class="fc" id="L35">        paramSource.addValue(&quot;fecha_alquiler&quot;, alquilerResumenDto.getFechaAlquiler());</span>
-<span class="fc" id="L36">        paramSource.addValue(&quot;fecha_devolucion&quot;, alquilerResumenDto.getFechaDevolucion());</span>
-<span class="fc" id="L37">        paramSource.addValue(&quot;fecha_devolucion_real&quot;, alquilerResumenDto.getFechaDevolucionReal());</span>
-<span class="fc" id="L38">        paramSource.addValue(&quot;pago&quot;, alquilerResumenDto.getTotalAPagar());</span>
-<span class="fc" id="L39">        return this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear).intValue();</span>
+<span class="fc" id="L31">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L32">        paramSource.addValue(&quot;tiempo_alquiler&quot;, alquilerResumenDto.getTiempoAlquilado());</span>
+<span class="fc" id="L33">        paramSource.addValue(&quot;fecha_alquiler&quot;, alquilerResumenDto.getFechaAlquiler());</span>
+<span class="fc" id="L34">        paramSource.addValue(&quot;fecha_devolucion&quot;, alquilerResumenDto.getFechaDevolucion());</span>
+<span class="fc" id="L35">        paramSource.addValue(&quot;fecha_devolucion_real&quot;, alquilerResumenDto.getFechaDevolucionReal());</span>
+<span class="fc" id="L36">        paramSource.addValue(&quot;pago&quot;, alquilerResumenDto.getTotalAPagar());</span>
+<span class="fc" id="L37">        return this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear).intValue();</span>
     }
 
     @Override
     public int eliminar(int id) {
 
-<span class="fc" id="L45">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L46">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="fc" id="L47">        EjecucionBaseDeDatos.obtenerUnObjetoONull(()-&gt;</span>
-<span class="fc" id="L48">                this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar,paramSource));</span>
+<span class="fc" id="L43">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L44">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="fc" id="L45">        EjecucionBaseDeDatos.obtenerUnObjetoONull(()-&gt;</span>
+<span class="fc" id="L46">                this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar,paramSource));</span>
 
-<span class="fc" id="L50">        return id;</span>
+<span class="fc" id="L48">        return id;</span>
     }
 
 }
