@@ -1,7 +1,8 @@
 package com.ceiba.servicio;
 
 import com.ceiba.dto.AlquilerResumenDto;
-import com.ceiba.puerto.RepositorioAlquiler;
+import com.ceiba.puerto.dao.DaoAlquiler;
+import com.ceiba.puerto.repositorio.RepositorioAlquiler;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -12,9 +13,10 @@ public class ServicioEliminarAlquilerTest {
     void noExistaAlquiler()
     {
         var repositorio = Mockito.mock(RepositorioAlquiler.class);
-        var servicio = new ServicioEliminarAlquiler(repositorio);
+        var repositorioDao = Mockito.mock(DaoAlquiler.class);
+        var servicio = new ServicioEliminarAlquiler(repositorio, repositorioDao);
 
-        Mockito.when(repositorio.consultarPorId(Mockito.anyInt())).thenReturn(null);
+        Mockito.when(repositorioDao.consultarPorId(Mockito.anyInt())).thenReturn(null);
 
         Assertions.assertEquals("No existe el Alquiler con los datos ingresados",
                 Assertions.assertThrows(IllegalStateException.class,() -> servicio.eliminar(1)).getMessage());
@@ -25,9 +27,10 @@ public class ServicioEliminarAlquilerTest {
     {
         AlquilerResumenDto alquilerResumenDto = new AlquilerResumenDto();
         var repositorio = Mockito.mock(RepositorioAlquiler.class);
-        var servicio = new ServicioEliminarAlquiler(repositorio);
+        var repositorioDao = Mockito.mock(DaoAlquiler.class);
+        var servicio = new ServicioEliminarAlquiler(repositorio, repositorioDao);
 
-        Mockito.when(repositorio.consultarPorId(Mockito.anyInt())).thenReturn(alquilerResumenDto);
+        Mockito.when(repositorioDao.consultarPorId(Mockito.anyInt())).thenReturn(alquilerResumenDto);
 
         servicio.eliminar(1);
 

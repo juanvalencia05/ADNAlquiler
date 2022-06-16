@@ -1,10 +1,12 @@
 package com.ceiba.controlador;
 
 import com.ceiba.ApplicationMock;
+
 import com.ceiba.alquiler.controlador.ControladorAlquiler;
-import com.ceiba.dto.DtoAlquiler;
-import com.ceiba.dto.DtoRespuesta;
-import com.ceiba.puerto.RepositorioAlquiler;
+import com.ceiba.modelo.dto.DtoAlquiler;
+import com.ceiba.modelo.dto.DtoRespuesta;
+import com.ceiba.puerto.dao.DaoAlquiler;
+import com.ceiba.puerto.repositorio.RepositorioAlquiler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -37,7 +39,7 @@ public class ControladoAlquilerTest {
     private MockMvc mocMvc;
 
     @Autowired
-    private RepositorioAlquiler repositorioAlquiler;
+    private DaoAlquiler daoAlquiler;
 
     @Test
     void crearAlquilerTest() throws Exception {
@@ -61,7 +63,7 @@ public class ControladoAlquilerTest {
         int id = respuesta.getValor().intValue();
         Assertions.assertNotNull(id);
 
-        var alquiler = repositorioAlquiler.consultarPorId(id);
+        var alquiler = daoAlquiler.consultarPorId(id);
 
         Assertions.assertEquals(dto.getTiempoAlquilado(),alquiler.getTiempoAlquilado());
         Assertions.assertEquals(dto.getFechaAlquiler(),alquiler.getFechaAlquiler());
@@ -69,22 +71,6 @@ public class ControladoAlquilerTest {
 
     }
 
-    @Test
-    @DisplayName("Debe listar los alquiler luego de crearlas")
-    void listarTest() throws Exception {
-
-        var dto = new DtoAlquilerDataBuilder().build();
-
-        crear(dto);
-
-        mocMvc.perform(MockMvcRequestBuilders.get("/alquiler")
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().is2xxSuccessful())
-                .andExpect(jsonPath("$[0].tiempoAlquilado", is(dto.getTiempoAlquilado())))
-                .andExpect(jsonPath("$[0].fechaAlquiler",is(dto.getFechaAlquiler())))
-                .andExpect(jsonPath("$[0].fechaDevolucion", is(dto.getFechaDevolucion())));
-    }
-    
     @Test
     @DisplayName("Deberia eliminar un vehiculo")
     void deberiaEliminarVehiculo() throws Exception {

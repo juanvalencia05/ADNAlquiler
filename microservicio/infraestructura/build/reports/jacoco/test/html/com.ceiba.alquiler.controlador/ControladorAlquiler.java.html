@@ -1,54 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ControladorAlquiler.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.alquiler.controlador</a> &gt; <span class="el_source">ControladorAlquiler.java</span></div><h1>ControladorAlquiler.java</h1><pre class="source lang-java linenums">package com.ceiba.alquiler.controlador;
 
-import com.ceiba.dto.AlquilerResumenDto;
-import com.ceiba.dto.DtoAlquiler;
-import com.ceiba.dto.DtoRespuesta;
+import com.ceiba.modelo.dto.DtoAlquiler;
+import com.ceiba.modelo.dto.DtoRespuesta;
 import com.ceiba.servicio.ServicioAplicacionCrearAlquiler;
 import com.ceiba.servicio.ServicioAplicacionEliminarAlquiler;
-import com.ceiba.servicio.ServicioAplicacionListarAlquiler;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(&quot;/alquiler&quot;)
 @Tag(name = &quot;Controlador alquiler&quot;)
 public class ControladorAlquiler {
     private  final ServicioAplicacionCrearAlquiler servicioCrearAlquiler;
-    private final ServicioAplicacionListarAlquiler servicioAplicacionListarAlquiler;
 
     private final ServicioAplicacionEliminarAlquiler servicioAplicacionEliminarAlquiler;
 
-<span class="fc" id="L24">    public ControladorAlquiler(ServicioAplicacionCrearAlquiler servicioCrearAlquiler, ServicioAplicacionListarAlquiler servicioAplicacionListarAlquiler, ServicioAplicacionEliminarAlquiler servicioAplicacionEliminarAlquiler) {</span>
-<span class="fc" id="L25">        this.servicioCrearAlquiler = servicioCrearAlquiler;</span>
-<span class="fc" id="L26">        this.servicioAplicacionListarAlquiler = servicioAplicacionListarAlquiler;</span>
-<span class="fc" id="L27">        this.servicioAplicacionEliminarAlquiler = servicioAplicacionEliminarAlquiler;</span>
-<span class="fc" id="L28">    }</span>
+<span class="fc" id="L19">    public ControladorAlquiler(ServicioAplicacionCrearAlquiler servicioCrearAlquiler, ServicioAplicacionEliminarAlquiler servicioAplicacionEliminarAlquiler) {</span>
+<span class="fc" id="L20">        this.servicioCrearAlquiler = servicioCrearAlquiler;</span>
+<span class="fc" id="L21">        this.servicioAplicacionEliminarAlquiler = servicioAplicacionEliminarAlquiler;</span>
+<span class="fc" id="L22">    }</span>
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public DtoRespuesta&lt;Integer&gt; crear(@RequestBody DtoAlquiler dto) {
-<span class="fc" id="L33">        return this.servicioCrearAlquiler.crear(dto);</span>
-    }
-
-    @GetMapping
-    public List&lt;AlquilerResumenDto&gt; listar()
-    {
-<span class="fc" id="L39">        return servicioAplicacionListarAlquiler.listar();</span>
-    }
-
-    @GetMapping(&quot;/{id}&quot;)
-    public AlquilerResumenDto listar(@PathVariable int id)
-    {
-<span class="nc" id="L45">        return servicioAplicacionListarAlquiler.consultar(id);</span>
+<span class="fc" id="L27">        return this.servicioCrearAlquiler.crear(dto);</span>
     }
 
     @DeleteMapping({&quot;/{id}&quot;})
     public DtoRespuesta&lt;Integer&gt; eliminar(@PathVariable int id)
     {
-<span class="fc" id="L51">        return this.servicioAplicacionEliminarAlquiler.eliminar(id);</span>
+<span class="fc" id="L33">        return this.servicioAplicacionEliminarAlquiler.eliminar(id);</span>
     }
 
 }

@@ -1,13 +1,9 @@
-package com.ceiba.puerto;
+package com.ceiba.puerto.repositorio;
 
 import com.ceiba.dto.AlquilerResumenDto;
 
-import java.util.List;
-
 public interface RepositorioAlquiler {
     int crear(AlquilerResumenDto alquilerResumenDto);
-    AlquilerResumenDto consultarPorId(int id);
     int eliminar(int id);
-    List<AlquilerResumenDto> listar();
 
 }

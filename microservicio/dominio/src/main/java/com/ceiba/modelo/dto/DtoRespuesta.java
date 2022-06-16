@@ -1,4 +1,4 @@
-package com.ceiba.dto;
+package com.ceiba.modelo.dto;
 
 public class DtoRespuesta<T> {
     private T valor;

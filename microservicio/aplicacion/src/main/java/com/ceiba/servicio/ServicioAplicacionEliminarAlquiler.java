@@ -1,6 +1,6 @@
 package com.ceiba.servicio;
 
-import com.ceiba.dto.DtoRespuesta;
+import com.ceiba.modelo.dto.DtoRespuesta;
 import org.springframework.stereotype.Component;
 
 @Component

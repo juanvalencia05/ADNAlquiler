@@ -1,6 +1,6 @@
 package com.ceiba.servicio;
 
-import com.ceiba.modelo.Alquiler;
+import com.ceiba.modelo.entidad.Alquiler;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;

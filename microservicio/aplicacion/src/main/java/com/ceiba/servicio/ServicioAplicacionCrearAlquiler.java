@@ -1,8 +1,8 @@
 package com.ceiba.servicio;
 
-import com.ceiba.dto.DtoAlquiler;
-import com.ceiba.dto.DtoRespuesta;
-import com.ceiba.modelo.Alquiler;
+import com.ceiba.modelo.dto.DtoAlquiler;
+import com.ceiba.modelo.dto.DtoRespuesta;
+import com.ceiba.modelo.entidad.Alquiler;
 import org.springframework.stereotype.Component;
 
 @Component

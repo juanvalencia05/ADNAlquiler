@@ -1,6 +1,6 @@
 package com.ceiba;
 
-import com.ceiba.modelo.Alquiler;
+import com.ceiba.modelo.entidad.Alquiler;
 
 public class AlquilerTestDataBuilder {
     private int tiempoAlquilado;

@@ -1,4 +1,4 @@
-package com.ceiba.modelo;
+package com.ceiba.modelo.entidad;
 
 import lombok.Getter;
 

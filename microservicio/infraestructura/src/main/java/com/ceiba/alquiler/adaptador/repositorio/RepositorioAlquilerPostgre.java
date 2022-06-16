@@ -5,12 +5,10 @@ import com.ceiba.dto.AlquilerResumenDto;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.EjecucionBaseDeDatos;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.puerto.RepositorioAlquiler;
+import com.ceiba.puerto.repositorio.RepositorioAlquiler;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @Repository
 public class RepositorioAlquilerPostgre implements RepositorioAlquiler {
@@ -23,17 +21,11 @@ public class RepositorioAlquilerPostgre implements RepositorioAlquiler {
         this.mapeoAlquiler = mapeoAlquiler;
     }
 
-    @SqlStatement(namespace = "alquiler", value = "obteneralquilerporid")
-    private static String sqlObtenerAlquilePorId;
-
     @SqlStatement(namespace = "alquiler", value = "crear")
     private static String sqlCrear;
 
     @SqlStatement(namespace = "alquiler", value = "eliminar")
     private static String sqlEliminar;
-
-    @SqlStatement(namespace = "alquiler", value = "consultar")
-    private static String sqlConsultar;
 
 
     @Override
@@ -48,16 +40,6 @@ public class RepositorioAlquilerPostgre implements RepositorioAlquiler {
     }
 
     @Override
-    public AlquilerResumenDto consultarPorId(int id) {
-        MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("id", id);
-        return EjecucionBaseDeDatos.obtenerUnObjetoONull(()->
-                this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
-                        .queryForObject(sqlObtenerAlquilePorId,paramSource, new MapeoAlquiler()));
-
-    }
-
-    @Override
     public int eliminar(int id) {
 
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
@@ -68,16 +50,4 @@ public class RepositorioAlquilerPostgre implements RepositorioAlquiler {
         return id;
     }
 
-    @Override
-    public List<AlquilerResumenDto> listar() {
-
-        MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.getValues();
-
-        List<AlquilerResumenDto> alquiler = this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
-                .query(sqlConsultar, paramSource, mapeoAlquiler );
-
-        return alquiler.stream().map(alqui -> new AlquilerResumenDto(alqui.getTiempoAlquilado(),alqui.getFechaAlquiler(),
-                alqui.getFechaDevolucion(),alqui.getFechaDevolucionReal(),alqui.getTotalAPagar())).toList();
-    }
 }

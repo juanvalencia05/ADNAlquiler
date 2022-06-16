@@ -1,21 +1,22 @@
 package com.ceiba.servicio;
 
 import com.ceiba.dto.AlquilerResumenDto;
-import com.ceiba.puerto.RepositorioAlquiler;
+import com.ceiba.puerto.dao.DaoAlquiler;
+
 import org.springframework.stereotype.Component;
 
 @Component
 public class ServicioAplicacionConsultarAlquiler {
 
-    private final RepositorioAlquiler repositorioAlquiler;
+    private final DaoAlquiler daoAlquiler;
 
-    public ServicioAplicacionConsultarAlquiler(RepositorioAlquiler repositorioAlquiler) {
-        this.repositorioAlquiler = repositorioAlquiler;
+    public ServicioAplicacionConsultarAlquiler(DaoAlquiler daoAlquiler) {
+        this.daoAlquiler = daoAlquiler;
     }
 
     public AlquilerResumenDto consultarPorId(int id)
     {
-        return this.repositorioAlquiler.consultarPorId(id);
+        return this.daoAlquiler.consultarPorId(id);
     }
 }
 

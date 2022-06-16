@@ -1,4 +1,4 @@
-package com.ceiba.dto;
+package com.ceiba.modelo.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

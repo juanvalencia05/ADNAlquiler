@@ -1,7 +1,8 @@
 package com.ceiba.servicio;
 
 
-import com.ceiba.puerto.RepositorioAlquiler;
+import com.ceiba.puerto.dao.DaoAlquiler;
+import com.ceiba.puerto.repositorio.RepositorioAlquiler;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -10,14 +11,16 @@ public class ServicioEliminarAlquiler {
     private static final String MENSAJE_NO_EXISTE = "No existe el Alquiler con los datos ingresados";
 
     private final RepositorioAlquiler repositorioAlquiler;
+    private final DaoAlquiler daoAlquiler;
 
-    public ServicioEliminarAlquiler(RepositorioAlquiler repositorioAlquiler) {
+    public ServicioEliminarAlquiler(RepositorioAlquiler repositorioAlquiler, DaoAlquiler daoAlquiler) {
         this.repositorioAlquiler = repositorioAlquiler;
+        this.daoAlquiler = daoAlquiler;
     }
 
     public int eliminar(int id)
     {
-        if(this.repositorioAlquiler.consultarPorId(id) == null)
+        if(this.daoAlquiler.consultarPorId(id) == null)
         {
             throw new IllegalStateException(MENSAJE_NO_EXISTE);
         }

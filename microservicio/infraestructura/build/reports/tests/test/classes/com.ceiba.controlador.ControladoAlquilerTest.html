@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">3</div>
+<div class="counter">2</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">2.520s</div>
+<div class="counter">0.623s</div>
 <p>duration</p>
 </div>
 </td>
@@ -81,19 +81,13 @@
 <tr>
 <td class="success">crearAlquilerTest()</td>
 <td class="success">crearAlquilerTest()</td>
-<td class="success">1.916s</td>
+<td class="success">0.384s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Deberia eliminar un vehiculo</td>
 <td class="success">deberiaEliminarVehiculo()</td>
-<td class="success">0.358s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">Debe listar los alquiler luego de crearlas</td>
-<td class="success">listarTest()</td>
-<td class="success">0.246s</td>
+<td class="success">0.239s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -101,18 +95,9 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>14:29:08.721 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-14:29:08.760 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-14:29:08.874 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.ceiba.controlador.ControladoAlquilerTest] from class [org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper]
-14:29:08.923 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.ceiba.controlador.ControladoAlquilerTest]: class path resource [com/ceiba/controlador/ControladoAlquilerTest-context.xml] does not exist
-14:29:08.924 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.ceiba.controlador.ControladoAlquilerTest]: class path resource [com/ceiba/controlador/ControladoAlquilerTestContext.groovy] does not exist
-14:29:08.924 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.ceiba.controlador.ControladoAlquilerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-14:29:09.090 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.ceiba.controlador.ControladoAlquilerTest]
-14:29:09.106 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - @TestExecutionListeners is not present for class [com.ceiba.controlador.ControladoAlquilerTest]: using defaults.
-14:29:09.107 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-14:29:09.161 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@ae202c6, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@46aa712c, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6ada9c0c, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7412ed6b, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6e7c351d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7b4a0aef, org.springframework.test.context.transaction.TransactionalTestExecutionListener@45cec376, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@26d41711, org.springframework.test.context.event.EventPublishingTestExecutionListener@298f0a0b, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2b960a7, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@31dfc6f5, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@37b52340, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@663bb8ef, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@2f4e40d7, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@60e9c3a5]
-14:29:09.170 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@30ca0779 testClass = ControladoAlquilerTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@58740366 testClass = ControladoAlquilerTest, locations = '{}', classes = '{class com.ceiba.ApplicationMock}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@52169758, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@636bbbbb, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@3a5f8a52, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@282a8763, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1f11f64e, [ImportsContextCustomizer@47be0f9b key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.context.MessageSourceAutoConfiguration, org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration, org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration, org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration, org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration, org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration, org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration, org.springframework.boot.autoconfigure.jsonb.JsonbAutoConfiguration, org.springframework.boot.autoconfigure.mustache.MustacheAutoConfiguration, org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration, org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@43045f9f, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4eba373c, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@0], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [true] with mode [AFTER_EACH_TEST_METHOD].
-14:29:09.198 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@30ca0779 testClass = ControladoAlquilerTest, testInstance = com.ceiba.controlador.ControladoAlquilerTest@3c98781a, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@58740366 testClass = ControladoAlquilerTest, locations = '{}', classes = '{class com.ceiba.ApplicationMock}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@52169758, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@636bbbbb, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@3a5f8a52, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@282a8763, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1f11f64e, [ImportsContextCustomizer@47be0f9b key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.context.MessageSourceAutoConfiguration, org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration, org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration, org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration, org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration, org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration, org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration, org.springframework.boot.autoconfigure.jsonb.JsonbAutoConfiguration, org.springframework.boot.autoconfigure.mustache.MustacheAutoConfiguration, org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration, org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@43045f9f, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4eba373c, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@0], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -&gt; false]]].
+<pre>2022-06-16 09:02:30.554  INFO 7720 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.ceiba.controlador.ControladoAlquilerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-06-16 09:02:30.561  INFO 7720 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-06-16 09:02:30.562  INFO 7720 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7e532896, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7a60c431, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@3256cd5a, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4f415a37, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@28b1ccd1, org.springframework.test.context.support.DirtiesContextTestExecutionListener@548cc4ba, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5034ef6c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@156187bf, org.springframework.test.context.event.EventPublishingTestExecutionListener@33101686, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@18bbd4a, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@76b36d98, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6ff6508e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5c61cfd0, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@dc58fb, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6d6e2ad5]
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -122,26 +107,25 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v2.7.0)
 
-2022-06-15 14:29:10.413  INFO 8436 --- [    Test worker] c.c.controlador.ControladoAlquilerTest   : Starting ControladoAlquilerTest using Java 17.0.3 on JUANP-VALENCIA with PID 8436 (started by juan.valencia in C:\Users\juan.valencia\Documents\GitHub\ADNAlquiler\microservicio\infraestructura)
-2022-06-15 14:29:10.416  INFO 8436 --- [    Test worker] c.c.controlador.ControladoAlquilerTest   : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2022-06-15 14:29:11.960  INFO 8436 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Starting...
-2022-06-15 14:29:12.570  INFO 8436 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Start completed.
-2022-06-15 14:29:12.851  INFO 8436 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2022-06-15 14:29:12.932  INFO 8436 --- [    Test worker] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 7.0.0 by Redgate
-2022-06-15 14:29:13.037  INFO 8436 --- [    Test worker] o.f.c.i.database.base.DatabaseType       : Database: jdbc:h2:mem:testdb (H2 1.4)
-2022-06-15 14:29:13.220  INFO 8436 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.055s)
-2022-06-15 14:29:13.244  INFO 8436 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table &quot;PUBLIC&quot;.&quot;flyway_schema_history&quot; ...
-2022-06-15 14:29:13.330  INFO 8436 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema &quot;PUBLIC&quot;: &lt;&lt; Empty Schema &gt;&gt;
-2022-06-15 14:29:13.342  INFO 8436 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version 1.0 - schema
-2022-06-15 14:29:13.389  INFO 8436 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version 1.1 - data
-2022-06-15 14:29:13.420  INFO 8436 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema &quot;PUBLIC&quot; (execution time 00:00.107s)
-2022-06-15 14:29:15.230  INFO 8436 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2022-06-15 14:29:15.230  INFO 8436 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2022-06-15 14:29:15.232  INFO 8436 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
-2022-06-15 14:29:15.289  INFO 8436 --- [    Test worker] c.c.controlador.ControladoAlquilerTest   : Started ControladoAlquilerTest in 5.986 seconds (JVM running for 8.645)
-2022-06-15 14:29:16.991  INFO 8436 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
-2022-06-15 14:29:17.196  INFO 8436 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown initiated...
-2022-06-15 14:29:17.205  INFO 8436 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown completed.
+2022-06-16 09:02:30.632  INFO 7720 --- [    Test worker] c.c.controlador.ControladoAlquilerTest   : Starting ControladoAlquilerTest using Java 17.0.3 on JUANP-VALENCIA with PID 7720 (started by juan.valencia in C:\Users\juan.valencia\Documents\GitHub\ADNAlquiler\microservicio\infraestructura)
+2022-06-16 09:02:30.632  INFO 7720 --- [    Test worker] c.c.controlador.ControladoAlquilerTest   : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2022-06-16 09:02:30.887  INFO 7720 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Starting...
+2022-06-16 09:02:30.891  INFO 7720 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Start completed.
+2022-06-16 09:02:30.976  INFO 7720 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2022-06-16 09:02:30.987  INFO 7720 --- [    Test worker] o.f.c.i.database.base.DatabaseType       : Database: jdbc:h2:mem:testdb (H2 1.4)
+2022-06-16 09:02:31.000  INFO 7720 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.006s)
+2022-06-16 09:02:31.015  INFO 7720 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table &quot;PUBLIC&quot;.&quot;flyway_schema_history&quot; ...
+2022-06-16 09:02:31.034  INFO 7720 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema &quot;PUBLIC&quot;: &lt;&lt; Empty Schema &gt;&gt;
+2022-06-16 09:02:31.041  INFO 7720 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version 1.0 - schema
+2022-06-16 09:02:31.067  INFO 7720 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version 1.1 - data
+2022-06-16 09:02:31.091  INFO 7720 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema &quot;PUBLIC&quot; (execution time 00:00.063s)
+2022-06-16 09:02:31.932  INFO 7720 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-06-16 09:02:31.933  INFO 7720 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-06-16 09:02:31.934  INFO 7720 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2022-06-16 09:02:31.959  INFO 7720 --- [    Test worker] c.c.controlador.ControladoAlquilerTest   : Started ControladoAlquilerTest in 1.392 seconds (JVM running for 11.974)
+2022-06-16 09:02:32.134  INFO 7720 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2022-06-16 09:02:32.350  INFO 7720 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown initiated...
+2022-06-16 09:02:32.351  INFO 7720 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown completed.
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -151,53 +135,25 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v2.7.0)
 
-2022-06-15 14:29:17.313  INFO 8436 --- [    Test worker] c.c.controlador.ControladoAlquilerTest   : Starting ControladoAlquilerTest using Java 17.0.3 on JUANP-VALENCIA with PID 8436 (started by juan.valencia in C:\Users\juan.valencia\Documents\GitHub\ADNAlquiler\microservicio\infraestructura)
-2022-06-15 14:29:17.314  INFO 8436 --- [    Test worker] c.c.controlador.ControladoAlquilerTest   : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2022-06-15 14:29:17.564  INFO 8436 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Starting...
-2022-06-15 14:29:17.568  INFO 8436 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Start completed.
-2022-06-15 14:29:17.646  INFO 8436 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2022-06-15 14:29:17.658  INFO 8436 --- [    Test worker] o.f.c.i.database.base.DatabaseType       : Database: jdbc:h2:mem:testdb (H2 1.4)
-2022-06-15 14:29:17.671  INFO 8436 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.007s)
-2022-06-15 14:29:17.681  INFO 8436 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table &quot;PUBLIC&quot;.&quot;flyway_schema_history&quot; ...
-2022-06-15 14:29:17.705  INFO 8436 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema &quot;PUBLIC&quot;: &lt;&lt; Empty Schema &gt;&gt;
-2022-06-15 14:29:17.710  INFO 8436 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version 1.0 - schema
-2022-06-15 14:29:17.737  INFO 8436 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version 1.1 - data
-2022-06-15 14:29:17.764  INFO 8436 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema &quot;PUBLIC&quot; (execution time 00:00.065s)
-2022-06-15 14:29:18.618  INFO 8436 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2022-06-15 14:29:18.618  INFO 8436 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2022-06-15 14:29:18.619  INFO 8436 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2022-06-15 14:29:18.641  INFO 8436 --- [    Test worker] c.c.controlador.ControladoAlquilerTest   : Started ControladoAlquilerTest in 1.385 seconds (JVM running for 11.997)
-2022-06-15 14:29:18.799  INFO 8436 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
-2022-06-15 14:29:19.004  INFO 8436 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown initiated...
-2022-06-15 14:29:19.005  INFO 8436 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown completed.
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::                (v2.7.0)
-
-2022-06-15 14:29:19.066  INFO 8436 --- [    Test worker] c.c.controlador.ControladoAlquilerTest   : Starting ControladoAlquilerTest using Java 17.0.3 on JUANP-VALENCIA with PID 8436 (started by juan.valencia in C:\Users\juan.valencia\Documents\GitHub\ADNAlquiler\microservicio\infraestructura)
-2022-06-15 14:29:19.066  INFO 8436 --- [    Test worker] c.c.controlador.ControladoAlquilerTest   : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2022-06-15 14:29:19.289  INFO 8436 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Starting...
-2022-06-15 14:29:19.292  INFO 8436 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Start completed.
-2022-06-15 14:29:19.366  INFO 8436 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2022-06-15 14:29:19.376  INFO 8436 --- [    Test worker] o.f.c.i.database.base.DatabaseType       : Database: jdbc:h2:mem:testdb (H2 1.4)
-2022-06-15 14:29:19.389  INFO 8436 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.008s)
-2022-06-15 14:29:19.396  INFO 8436 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table &quot;PUBLIC&quot;.&quot;flyway_schema_history&quot; ...
-2022-06-15 14:29:19.414  INFO 8436 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema &quot;PUBLIC&quot;: &lt;&lt; Empty Schema &gt;&gt;
-2022-06-15 14:29:19.419  INFO 8436 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version 1.0 - schema
-2022-06-15 14:29:19.442  INFO 8436 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version 1.1 - data
-2022-06-15 14:29:19.463  INFO 8436 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema &quot;PUBLIC&quot; (execution time 00:00.057s)
-2022-06-15 14:29:20.228  INFO 8436 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2022-06-15 14:29:20.228  INFO 8436 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2022-06-15 14:29:20.229  INFO 8436 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2022-06-15 14:29:20.247  INFO 8436 --- [    Test worker] c.c.controlador.ControladoAlquilerTest   : Started ControladoAlquilerTest in 1.238 seconds (JVM running for 13.602)
-2022-06-15 14:29:20.285  INFO 8436 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
-2022-06-15 14:29:20.497  INFO 8436 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown initiated...
-2022-06-15 14:29:20.498  INFO 8436 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown completed.
+2022-06-16 09:02:32.402  INFO 7720 --- [    Test worker] c.c.controlador.ControladoAlquilerTest   : Starting ControladoAlquilerTest using Java 17.0.3 on JUANP-VALENCIA with PID 7720 (started by juan.valencia in C:\Users\juan.valencia\Documents\GitHub\ADNAlquiler\microservicio\infraestructura)
+2022-06-16 09:02:32.402  INFO 7720 --- [    Test worker] c.c.controlador.ControladoAlquilerTest   : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2022-06-16 09:02:32.603  INFO 7720 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Starting...
+2022-06-16 09:02:32.606  INFO 7720 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Start completed.
+2022-06-16 09:02:32.687  INFO 7720 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2022-06-16 09:02:32.697  INFO 7720 --- [    Test worker] o.f.c.i.database.base.DatabaseType       : Database: jdbc:h2:mem:testdb (H2 1.4)
+2022-06-16 09:02:32.705  INFO 7720 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.004s)
+2022-06-16 09:02:32.714  INFO 7720 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table &quot;PUBLIC&quot;.&quot;flyway_schema_history&quot; ...
+2022-06-16 09:02:32.730  INFO 7720 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema &quot;PUBLIC&quot;: &lt;&lt; Empty Schema &gt;&gt;
+2022-06-16 09:02:32.734  INFO 7720 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version 1.0 - schema
+2022-06-16 09:02:32.758  INFO 7720 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version 1.1 - data
+2022-06-16 09:02:32.777  INFO 7720 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema &quot;PUBLIC&quot; (execution time 00:00.053s)
+2022-06-16 09:02:33.527  INFO 7720 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-06-16 09:02:33.528  INFO 7720 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-06-16 09:02:33.528  INFO 7720 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2022-06-16 09:02:33.548  INFO 7720 --- [    Test worker] c.c.controlador.ControladoAlquilerTest   : Started ControladoAlquilerTest in 1.193 seconds (JVM running for 13.564)
+2022-06-16 09:02:33.585  INFO 7720 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2022-06-16 09:02:33.790  INFO 7720 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown initiated...
+2022-06-16 09:02:33.792  INFO 7720 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown completed.
 </pre>
 </span>
 </div>
@@ -209,7 +165,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.3.3</a> at Jun 15, 2022, 2:29:21 PM</p>
+<a href="http://www.gradle.org">Gradle 7.3.3</a> at Jun 16, 2022, 9:02:34 AM</p>
 </div>
 </div>
 </body>

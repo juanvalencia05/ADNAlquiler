@@ -1,6 +1,6 @@
 package com.ceiba.controlador;
 
-import com.ceiba.dto.DtoAlquiler;
+import com.ceiba.modelo.dto.DtoAlquiler;
 
 public class DtoAlquilerDataBuilder {
 

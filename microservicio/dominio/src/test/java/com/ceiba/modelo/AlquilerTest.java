@@ -1,5 +1,6 @@
 package com.ceiba.modelo;
 
+import com.ceiba.modelo.entidad.Alquiler;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
