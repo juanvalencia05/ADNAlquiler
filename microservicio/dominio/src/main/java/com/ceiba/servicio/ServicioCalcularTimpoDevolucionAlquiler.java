@@ -1,12 +1,12 @@
 package com.ceiba.servicio;
 
 import com.ceiba.modelo.entidad.Alquiler;
-import org.springframework.stereotype.Service;
+
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-@Service
+
 public class ServicioCalcularTimpoDevolucionAlquiler {
 
     public String calcularFechaDevolucon(Alquiler alquiler)

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import static java.time.temporal.ChronoUnit.DAYS;
-@Service
+
 public class ServicioCalcularPago {
     private static final int VALOR_DIA = 40000;
     private static final int VALOR_MULTA = 60000;
@@ -32,7 +32,7 @@ public class ServicioCalcularPago {
 
 <span class="fc" id="L33">            Long dias = DAYS.between(fechadevolucion,fechadevolucionReal);</span>
 
-<span class="fc bfc" id="L35" title="All 2 branches covered.">            if(dias&lt;0)</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">            if(dias&lt;=0)</span>
             {
 <span class="fc" id="L37">                return (int) (dias+ alquiler.getTiempoAlquilado())*VALOR_DIA;</span>
             }else

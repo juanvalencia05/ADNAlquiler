@@ -1,11 +1,10 @@
 package com.ceiba.servicio;
 
-
 import com.ceiba.puerto.dao.DaoAlquiler;
 import com.ceiba.puerto.repositorio.RepositorioAlquiler;
-import org.springframework.stereotype.Service;
 
-@Service
+
+
 public class ServicioEliminarAlquiler {
 
     private static final String MENSAJE_NO_EXISTE = "No existe el Alquiler con los datos ingresados";

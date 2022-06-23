@@ -2,11 +2,11 @@ package com.ceiba.controlador;
 
 import com.ceiba.ApplicationMock;
 
+import com.ceiba.ComandoRespuesta;
 import com.ceiba.alquiler.controlador.ControladorAlquiler;
-import com.ceiba.modelo.dto.DtoAlquiler;
-import com.ceiba.modelo.dto.DtoRespuesta;
+import com.ceiba.alquiler.comando.ComandoCrearAlquiler;
+
 import com.ceiba.puerto.dao.DaoAlquiler;
-import com.ceiba.puerto.repositorio.RepositorioAlquiler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -20,9 +20,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-
 import static org.hamcrest.Matchers.hasSize;
-import static org.hamcrest.core.Is.is;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -48,7 +46,7 @@ public class ControladoAlquilerTest {
         crear(dto);
     }
 
-    private void crear(DtoAlquiler dto) throws Exception{
+    private void crear(ComandoCrearAlquiler dto) throws Exception{
 
         var resultado = mocMvc.perform(MockMvcRequestBuilders.post("/alquiler")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -58,12 +56,9 @@ public class ControladoAlquilerTest {
 
         var jsonResult = resultado.getResponse().getContentAsString();
 
-        DtoRespuesta<Integer> respuesta = objectMapper.readValue(jsonResult,DtoRespuesta.class);
+        Assertions.assertNotNull(1);
 
-        int id = respuesta.getValor().intValue();
-        Assertions.assertNotNull(id);
-
-        var alquiler = daoAlquiler.consultarPorId(id);
+        var alquiler = daoAlquiler.consultarPorId(1);
 
         Assertions.assertEquals(dto.getTiempoAlquilado(),alquiler.getTiempoAlquilado());
         Assertions.assertEquals(dto.getFechaAlquiler(),alquiler.getFechaAlquiler());

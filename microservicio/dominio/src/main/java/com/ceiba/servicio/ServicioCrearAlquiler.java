@@ -1,11 +1,11 @@
 package com.ceiba.servicio;
 
-import com.ceiba.dto.AlquilerResumenDto;
+import com.ceiba.modelo.dto.AlquilerResumenDto;
 import com.ceiba.modelo.entidad.Alquiler;
 import com.ceiba.puerto.repositorio.RepositorioAlquiler;
-import org.springframework.stereotype.Service;
 
-@Service
+
+
 public class ServicioCrearAlquiler {
     private final RepositorioAlquiler repositorioAlquiler;
     private final ServicioCalcularPago servicioCalcularPago;

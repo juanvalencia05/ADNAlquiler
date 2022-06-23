@@ -5,13 +5,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
-public class DtoAlquiler {
+public class AlquilerResumenDto {
+
     private  int tiempoAlquilado;
-    private  String fechaAlquiler;
-    private  String  fechaDevolucion;
+    private String fechaAlquiler;
+    private String  fechaDevolucion;
+    private String  fechaDevolucionReal;
+    private int totalAPagar;
 
 }

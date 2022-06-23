@@ -1,6 +1,6 @@
 package com.ceiba.alquiler.consulta;
 
-import com.ceiba.dto.AlquilerResumenDto;
+import com.ceiba.modelo.dto.AlquilerResumenDto;
 import com.ceiba.puerto.dao.DaoAlquiler;
 
 import org.springframework.stereotype.Component;

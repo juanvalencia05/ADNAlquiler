@@ -1,6 +1,6 @@
 package com.ceiba.controlador;
 
-import com.ceiba.modelo.dto.DtoAlquiler;
+import com.ceiba.alquiler.comando.ComandoCrearAlquiler;
 
 public class DtoAlquilerDataBuilder {
 
@@ -15,7 +15,7 @@ public class DtoAlquilerDataBuilder {
 
     }
 
-    public DtoAlquiler build() {
-        return new DtoAlquiler(tiempoAlquilado,fechaAlquiler,fechaDevolucion);
+    public ComandoCrearAlquiler build() {
+        return new ComandoCrearAlquiler(tiempoAlquilado,fechaAlquiler,fechaDevolucion);
     }
 }

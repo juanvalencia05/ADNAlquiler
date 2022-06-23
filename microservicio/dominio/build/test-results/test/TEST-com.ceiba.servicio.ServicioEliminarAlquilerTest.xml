@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.servicio.ServicioEliminarAlquilerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-06-16T15:25:33" hostname="JUANP-VALENCIA" time="0.068">
+<testsuite name="com.ceiba.servicio.ServicioEliminarAlquilerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-06-23T20:37:20" hostname="JUANP-VALENCIA" time="0.066">
   <properties/>
-  <testcase name="noExistaAlquiler()" classname="com.ceiba.servicio.ServicioEliminarAlquilerTest" time="0.045"/>
+  <testcase name="noExistaAlquiler()" classname="com.ceiba.servicio.ServicioEliminarAlquilerTest" time="0.043"/>
   <testcase name="eliminarAlquiler()" classname="com.ceiba.servicio.ServicioEliminarAlquilerTest" time="0.022"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

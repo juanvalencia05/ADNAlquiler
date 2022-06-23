@@ -1,12 +1,12 @@
 package com.ceiba.servicio;
 
 import com.ceiba.modelo.entidad.Alquiler;
-import org.springframework.stereotype.Service;
+
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import static java.time.temporal.ChronoUnit.DAYS;
-@Service
+
 public class ServicioCalcularPago {
     private static final int VALOR_DIA = 40000;
     private static final int VALOR_MULTA = 60000;
@@ -32,7 +32,7 @@ public class ServicioCalcularPago {
 
             Long dias = DAYS.between(fechadevolucion,fechadevolucionReal);
 
-            if(dias<0)
+            if(dias<=0)
             {
                 return (int) (dias+ alquiler.getTiempoAlquilado())*VALOR_DIA;
             }else

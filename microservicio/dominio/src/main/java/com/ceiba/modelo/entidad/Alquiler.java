@@ -36,7 +36,7 @@ public class Alquiler {
     }
     public static void validarDiferenteDeCero(int valor, String mensaje)
     {
-        if (valor==0 || valor < 0)
+        if (valor <= 0)
         {
             throw new IllegalArgumentException(mensaje);
         }

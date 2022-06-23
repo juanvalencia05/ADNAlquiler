@@ -1,6 +1,6 @@
 package com.ceiba.alquiler.adaptador.dao;
 
-import com.ceiba.dto.AlquilerResumenDto;
+import com.ceiba.modelo.dto.AlquilerResumenDto;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.EjecucionBaseDeDatos;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;

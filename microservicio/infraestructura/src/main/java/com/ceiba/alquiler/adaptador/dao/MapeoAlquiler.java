@@ -1,5 +1,5 @@
 package com.ceiba.alquiler.adaptador.dao;
-import com.ceiba.dto.AlquilerResumenDto;
+import com.ceiba.modelo.dto.AlquilerResumenDto;
 import com.ceiba.infraestructura.jdbc.MapperResult;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;

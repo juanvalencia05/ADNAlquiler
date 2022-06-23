@@ -1,6 +1,6 @@
 package com.ceiba.servicio;
 
-import com.ceiba.dto.AlquilerResumenDto;
+import com.ceiba.modelo.dto.AlquilerResumenDto;
 import com.ceiba.puerto.dao.DaoAlquiler;
 import com.ceiba.puerto.repositorio.RepositorioAlquiler;
 import org.junit.jupiter.api.Assertions;

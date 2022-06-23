@@ -31,5 +31,7 @@ public class AlquilerTest {
         Assertions.assertEquals("El numero de dias de Alquiler no puede ser cero, ni negativo",Assertions.assertThrows(IllegalArgumentException.class,() ->
                 Alquiler.of(0,"07/06/2022","12/06/2022")).getMessage());
 
+        Assertions.assertEquals("El numero de dias de Alquiler no puede ser cero, ni negativo",Assertions.assertThrows(IllegalArgumentException.class,() ->
+                Alquiler.of(-1,"07/06/2022","12/06/2022")).getMessage());
     }
 }

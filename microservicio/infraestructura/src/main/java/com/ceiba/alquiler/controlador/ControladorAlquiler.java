@@ -1,8 +1,8 @@
 package com.ceiba.alquiler.controlador;
 
+import com.ceiba.ComandoRespuesta;
 import com.ceiba.alquiler.comando.manejador.ManejadorEliminarAlquiler;
-import com.ceiba.modelo.dto.DtoAlquiler;
-import com.ceiba.modelo.dto.DtoRespuesta;
+import com.ceiba.alquiler.comando.ComandoCrearAlquiler;
 import com.ceiba.alquiler.comando.manejador.ManejadorCrearAlquiler;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
@@ -24,12 +24,12 @@ public class ControladorAlquiler {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public DtoRespuesta<Integer> crear(@RequestBody DtoAlquiler dto) {
+    public ComandoRespuesta<Integer> crear(@RequestBody ComandoCrearAlquiler dto) {
         return this.servicioCrearAlquiler.crear(dto);
     }
 
     @DeleteMapping({"/{id}"})
-    public DtoRespuesta<Integer> eliminar(@PathVariable int id)
+    public ComandoRespuesta<Integer> eliminar(@PathVariable int id)
     {
         return this.manejadorEliminarAlquiler.eliminar(id);
     }

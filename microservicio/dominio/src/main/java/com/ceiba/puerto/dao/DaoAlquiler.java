@@ -1,6 +1,6 @@
 package com.ceiba.puerto.dao;
 
-import com.ceiba.dto.AlquilerResumenDto;
+import com.ceiba.modelo.dto.AlquilerResumenDto;
 
 import java.util.List;
 

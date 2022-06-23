@@ -1,6 +1,7 @@
 package com.ceiba.alquiler.comando.manejador;
 
-import com.ceiba.modelo.dto.DtoRespuesta;
+
+import com.ceiba.ComandoRespuesta;
 import com.ceiba.servicio.ServicioEliminarAlquiler;
 import org.springframework.stereotype.Component;
 
@@ -12,8 +13,8 @@ public class ManejadorEliminarAlquiler {
         this.servicioEliminarAlquiler = servicioEliminarAlquiler;
     }
 
-    public DtoRespuesta<Integer> eliminar(int id)
+    public ComandoRespuesta<Integer> eliminar(int id)
     {
-        return new DtoRespuesta<>(this.servicioEliminarAlquiler.eliminar(id));
+        return new ComandoRespuesta<>(this.servicioEliminarAlquiler.eliminar(id));
     }
 }

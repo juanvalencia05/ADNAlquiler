@@ -1,7 +1,7 @@
 package com.ceiba.alquiler.controlador;
 
 import com.ceiba.alquiler.consulta.ManejadorListarAlquiler;
-import com.ceiba.dto.AlquilerResumenDto;
+import com.ceiba.modelo.dto.AlquilerResumenDto;
 import com.ceiba.alquiler.consulta.ManejadorConsultarAlquiler;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.GetMapping;
