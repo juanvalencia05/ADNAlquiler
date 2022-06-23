@@ -1,6 +1,5 @@
 package com.ceiba.configuracion;
 
-import com.ceiba.modelo.entidad.Alquiler;
 import com.ceiba.puerto.dao.DaoAlquiler;
 import com.ceiba.puerto.repositorio.RepositorioAlquiler;
 import com.ceiba.servicio.ServicioCalcularPago;
