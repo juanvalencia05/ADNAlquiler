@@ -6,8 +6,6 @@ public class ErrorHealthCheck {
 	private String nombre;
 	private String estado;
 
-	
-	
 	public ErrorHealthCheck(String nombre) {
 		this.nombre = nombre;
 		this.estado = "DOWN";

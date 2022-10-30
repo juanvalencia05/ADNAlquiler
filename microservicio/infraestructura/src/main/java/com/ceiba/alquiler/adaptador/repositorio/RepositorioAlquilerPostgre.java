@@ -1,9 +1,9 @@
 package com.ceiba.alquiler.adaptador.repositorio;
 
-import com.ceiba.modelo.dto.AlquilerResumenDto;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.EjecucionBaseDeDatos;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
+import com.ceiba.modelo.dto.AlquilerResumenDto;
 import com.ceiba.puerto.repositorio.RepositorioAlquiler;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;

@@ -33,7 +33,7 @@ public class DaoAlquilerPostgre implements DaoAlquiler {
         List<AlquilerResumenDto> alquiler = this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
                 .query(sqlConsultar, paramSource, mapeoAlquiler );
 
-        return alquiler.stream().map(alqui -> new AlquilerResumenDto(alqui.getTiempoAlquilado(),alqui.getFechaAlquiler(),
+        return alquiler.stream().map(alqui -> new AlquilerResumenDto(alqui.getId(), alqui.getTiempoAlquilado(),alqui.getFechaAlquiler(),
                 alqui.getFechaDevolucion(),alqui.getFechaDevolucionReal(),alqui.getTotalAPagar())).toList();
     }
 

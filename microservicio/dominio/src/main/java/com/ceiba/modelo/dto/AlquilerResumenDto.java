@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class AlquilerResumenDto {
-
+    private int id;
     private  int tiempoAlquilado;
     private String fechaAlquiler;
     private String  fechaDevolucion;
